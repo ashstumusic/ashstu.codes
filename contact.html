@@ -59,7 +59,7 @@
           </div>
           <div class="contact-detail">
             <div class="icon">📅</div>
-            <span>Free consultations available Mon–Sat</span>
+            <span>Free consultations available Mon–Sat — phone or Zoom</span>
           </div>
           <div class="contact-detail">
             <div class="icon">⚡</div>
@@ -74,11 +74,11 @@
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Debbie Smith" required />
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
               <label for="business">Business Name</label>
-              <input type="text" id="business" name="business" placeholder="The Stables Cafe" />
+              <input type="text" id="business" name="business" placeholder="Your business" />
             </div>
           </div>
 
@@ -87,16 +87,27 @@
             <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required />
           </div>
 
-          <div class="form-group">
-            <label for="interest">What are you looking for?</label>
-            <select id="interest" name="interest">
-              <option value="">Select one</option>
-              <option value="foundation">Foundation Tier ($100/mo)</option>
-              <option value="growth">Growth Tier ($150/mo)</option>
-              <option value="sovereign">Sovereign Tier ($250/mo)</option>
-              <option value="alacarte">A La Carte Module</option>
-              <option value="unsure">Not sure yet</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="interest">What are you looking for?</label>
+              <select id="interest" name="interest">
+                <option value="">Select one</option>
+                <option value="foundation">Foundation Tier ($100/mo)</option>
+                <option value="growth">Growth Tier ($150/mo)</option>
+                <option value="sovereign">Sovereign Tier ($250/mo)</option>
+                <option value="alacarte">A La Carte Module</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="call-type">Preferred consultation format</label>
+              <select id="call-type" name="call_type">
+                <option value="">Select one</option>
+                <option value="phone">Phone call</option>
+                <option value="zoom">Zoom call</option>
+                <option value="either">Either works</option>
+              </select>
+            </div>
           </div>
 
           <div class="form-group">
