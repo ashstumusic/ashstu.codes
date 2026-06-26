@@ -5,8 +5,8 @@
   --bg-alt: #f1f5f9;
   --text: #0f172a;
   --muted: #64748b;
-  --accent: #2563eb;
-  --accent-dark: #1d4ed8;
+  --accent: #FE5C00;
+  --accent-dark: #d94e00;
   --border: #e2e8f0;
   --radius: 8px;
   --max: 1100px;
@@ -149,14 +149,14 @@ p.lead {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: #eff6ff;
+  background: #fff1e8;
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.3rem 0.9rem;
   border-radius: 100px;
   margin-bottom: 1.5rem;
-  border: 1px solid #bfdbfe;
+  border: 1px solid #fecba8;
 }
 
 .hero h1 { margin-bottom: 1.25rem; max-width: 780px; }
@@ -207,12 +207,12 @@ p.lead {
 
 .tier-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 4px 24px rgba(37,99,235,0.08);
+  box-shadow: 0 4px 24px rgba(254,92,0,0.08);
 }
 
 .tier-card.featured {
   border-color: var(--accent);
-  background: #f0f6ff;
+  background: #fff4ee;
 }
 
 .tier-badge {
@@ -335,7 +335,7 @@ p.lead {
 .advantage-icon {
   width: 40px;
   height: 40px;
-  background: #eff6ff;
+  background: #fff1e8;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -428,7 +428,7 @@ p.lead {
 .contact-detail .icon {
   width: 36px;
   height: 36px;
-  background: #eff6ff;
+  background: #fff1e8;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
