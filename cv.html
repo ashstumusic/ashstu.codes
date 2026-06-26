@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashton Stubblefield — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #FE5C00;
+      --text: #111111;
+      --muted: #555555;
+      --border: #e0e0e0;
+      --bg: #ffffff;
+    }
+
+    html, body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 10.5pt;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 0 auto;
+      padding: 0.55in 0.6in;
+    }
+
+    /* ── HEADER ── */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 0.3in;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 0.22in;
+    }
+
+    .cv-name {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.1in;
+    }
+
+    .cv-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .cv-contact {
+      text-align: right;
+      font-size: 8.5pt;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      padding-top: 0.04in;
+    }
+
+    .cv-contact a { color: var(--muted); text-decoration: none; }
+
+    /* ── SECTIONS ── */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 0.22in;
+    }
+
+    .col-left { display: flex; flex-direction: column; gap: 0.2in; }
+    .col-right { display: flex; flex-direction: column; gap: 0.2in; }
+
+    .section-title {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.08in;
+      padding-bottom: 0.04in;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── SUMMARY ── */
+    .summary p {
+      font-size: 9pt;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── COMPETENCIES ── */
+    .skills-group { margin-bottom: 0.1in; }
+    .skills-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.04in;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.06in;
+    }
+
+    .skill-tag {
+      background: #f4f4f4;
+      color: var(--muted);
+      font-size: 7pt;
+      font-weight: 600;
+      padding: 0.02in 0.08in;
+      border-radius: 3px;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item { margin-bottom: 0.12in; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .edu-school {
+      font-size: 8pt;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .edu-detail {
+      font-size: 7.5pt;
+      color: var(--muted);
+      margin-top: 0.02in;
+      line-height: 1.4;
+    }
+
+    .edu-badge {
+      display: inline-block;
+      background: rgba(254,92,0,0.08);
+      border: 1px solid rgba(254,92,0,0.2);
+      color: var(--accent);
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 0.015in 0.07in;
+      border-radius: 3px;
+      margin-top: 0.04in;
+      margin-right: 0.04in;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item { margin-bottom: 0.18in; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.02in;
+    }
+
+    .exp-role {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .exp-dates {
+      font-size: 8pt;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.06in;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.04in;
+    }
+
+    .exp-bullets li {
+      font-size: 8.5pt;
+      color: var(--muted);
+      display: flex;
+      gap: 0.08in;
+      align-items: flex-start;
+      line-height: 1.5;
+    }
+
+    .exp-bullets li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 8pt;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      html, body { background: white; }
+      .page { padding: 0.5in 0.55in; }
+      @page { size: letter; margin: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="cv-header">
+    <div>
+      <div class="cv-name">Ashton Stubblefield</div>
+      <div class="cv-title">Operational Architect &amp; IT Specialist</div>
+    </div>
+    <div class="cv-contact">
+      <span>Guthrie, OK</span>
+      <span>405.712.8959</span>
+      <a href="mailto:stubblefieldashton@gmail.com">stubblefieldashton@gmail.com</a>
+      <a href="https://ashstu.codes">ashstu.codes</a>
+      <a href="https://linkedin.com/in/ashton-stubblefield-0963243a4">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- LEFT COLUMN -->
+    <div class="col-left">
+
+      <!-- SUMMARY -->
+      <div class="summary">
+        <div class="section-title">Summary</div>
+        <p>
+          Dedicated professional with six years of experience building custom digital solutions. Progressed from digital design to business software development, earning an IT Specialist certification and ranking 2nd in Oklahoma for C# Programming. Independently providing tailored web architecture for local businesses while pursuing dual degrees in Psychology and Crime Victim Advocacy at OSU-OKC.
+        </p>
+      </div>
+
+      <!-- COMPETENCIES -->
+      <div>
+        <div class="section-title">Competencies</div>
+        <div class="skills-group">
+          <div class="skills-label">Technical</div>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">C# Programming</span>
+            <span class="skill-tag">SQL Databases</span>
+            <span class="skill-tag">System Administration</span>
+            <span class="skill-tag">Technical Troubleshooting</span>
+            <span class="skill-tag">Toast POS</span>
+            <span class="skill-tag">Adobe Suite</span>
+            <span class="skill-tag">GitHub Pages</span>
+            <span class="skill-tag">UI / UX Design</span>
+            <span class="skill-tag">Shopify</span>
+          </div>
+        </div>
+        <div class="skills-group" style="margin-top: 0.08in;">
+          <div class="skills-label">Human Services</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Trauma-Informed Care</span>
+            <span class="skill-tag">Crisis Intervention</span>
+            <span class="skill-tag">Clinical Support</span>
+            <span class="skill-tag">Healthcare Administration</span>
+            <span class="skill-tag">Operational Efficiency</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div>
+        <div class="section-title">Education</div>
+
+        <div class="edu-item">
+          <div class="edu-degree">AAS — Crime Victim Advocacy</div>
+          <div class="edu-school">OSU-OKC</div>
+          <div class="edu-detail">Expected 2027 · Trauma-informed care, victims' rights, justice system navigation.</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">AS — Psychology</div>
+          <div class="edu-school">OSU-OKC</div>
+          <div class="edu-detail">Expected 2027 · Human behavior, clinical support, crisis intervention.</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">IT Specialist — Certiport Certification</div>
+          <div class="edu-school">Francis Tuttle Technology Center</div>
+          <div class="edu-detail">Business Professionals of America Conference, 2021.</div>
+          <div>
+            <span class="edu-badge">2nd in OK — C# Programming</span>
+            <span class="edu-badge">6th in OK — SQL Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree">High School Diploma</div>
+          <div class="edu-school">Edmond North High School</div>
+          <div class="edu-detail">Top 4% of U.S. public high schools nationally.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-right">
+
+      <div>
+        <div class="section-title">Professional Experience</div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Software Developer</div>
+            <div class="exp-dates">Jan 2023 — Present</div>
+          </div>
+          <div class="exp-company">Independent Contractor</div>
+          <ul class="exp-bullets">
+            <li>Design and deploy bespoke, high-performance HTML websites and digital assets for local businesses and professionals.</li>
+            <li>Manage the full development lifecycle from initial UI/UX design in Adobe Suite to technical implementation and ongoing maintenance.</li>
+            <li>Prioritize speed, security, and personal branding while delivering professional-grade code and custom web architecture.</li>
+            <li>Provide 24/7 emergency support and weekly system audits for active clients under recurring service contracts.</li>
+          </ul>
+        </div>
+
+        <hr class="divider" style="margin: 0.12in 0;" />
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <div class="exp-role">Front of House Specialist &amp; Expo</div>
+            <div class="exp-dates">Nov 2023 — Jul 2025</div>
+          </div>
+          <div class="exp-company">Waffle Champion</div>
+          <ul class="exp-bullets">
+            <li>Mastered the Toast POS interface for high-volume digital systems management and precise financial data entry.</li>
+            <li>Maintained operational uptime by troubleshooting hardware and software issues under pressure.</li>
+            <li>Acted as a central communication hub between back-end production and front-end delivery to ensure seamless workflow.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
