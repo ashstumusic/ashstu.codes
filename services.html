@@ -1,113 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services & Pricing - Ashton Stubblefield</title>
-  <meta name="description" content="Service tiers and a la carte modules for local business tech support, web development, and operational infrastructure." />
+  <meta name="description" content="Web development, app development, software distribution, Toast POS setup, tip pooling automation, local SEO, photography, DoorDash optimization, and operational sync for local businesses." />
   <link rel="canonical" href="https://ashstu.codes/services.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="scroll-bar" id="scroll-bar"></div>
+
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ashton Stubblefield</a>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#pitch">The Pitch</a></li>
       <li><a href="services.html" class="active">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="cv.html" target="_blank">Resume</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html" target="_blank">Credentials</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#pitch">The Pitch</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" target="_blank">Credentials</a>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</div>
+
+<main id="main-content">
 
 <div class="page-hero">
   <div class="container">
     <p class="section-label reveal">Services & Pricing</p>
-    <h1 class="reveal reveal-delay-1">Everything your operation needs.<br />Nothing it doesn't.</h1>
-    <p class="reveal reveal-delay-2">Monthly support tiers or one-time modules. No upsells. No surprises.</p>
+    <h1 class="reveal reveal-delay-1">The team you couldn't afford.<br />At a price you can.</h1>
+    <p class="reveal reveal-delay-2">Web development, IT, marketing, branding, and custom software — one person, one retainer, flat pricing. Everything built is yours to own.</p>
   </div>
 </div>
 
 <!-- TIERS -->
 <section class="section-dark">
   <div class="container">
-    <p class="section-label reveal">Monthly Tiers</p>
-    <h2 class="reveal reveal-delay-1">Recurring Support Packages</h2>
-    <p class="reveal reveal-delay-2" style="color: var(--muted-dark); margin-top: 0.5rem; max-width: 520px;">
-      All tiers include a custom-coded website, $0/mo hosting, and direct personal access.
+    <p class="section-label reveal">Tiers</p>
+    <h2 class="reveal reveal-delay-1">Fully Managed. You Run Your Business.</h2>
+    <p class="reveal reveal-delay-2" style="color: var(--muted-dark); margin-top: 0.5rem; max-width: 580px;">
+      Every tier includes a custom-coded website, $0/mo hosting, and full ownership of every deliverable — always. Monthly tiers add ongoing management. The Launch tier is a single flat fee with no strings.
     </p>
 
-    <div class="tiers-grid">
+    <div class="tiers-grid tiers-grid--wide">
 
       <div class="tier-card reveal">
-        <div class="tier-name">Foundation - "Lights On"</div>
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 8L24 16H32L26 21L28 29L20 24L12 29L14 21L8 16H16Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        <div class="tier-name">Launch</div>
+        <div class="tier-price">
+          <span class="amount">$50</span>
+          <span class="period">flat</span>
+        </div>
+        <div class="tier-setup">One-time. No recurring fee.</div>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Custom-coded static website (up to 3 pages)</li>
+          <li>GitHub Pages hosting setup</li>
+          <li>DNS configuration</li>
+          <li>Full ownership &amp; credentials handed over</li>
+          <li>No maintenance or updates included</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal reveal-delay-1">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="16" y="10" width="8" height="3" rx="1" fill="currentColor" opacity="0.4"/><rect x="11" y="17" width="18" height="3" rx="1" fill="currentColor" opacity="0.7"/><rect x="6" y="24" width="28" height="5" rx="1" fill="currentColor"/></svg></span>
+        <div class="tier-name">Foundation</div>
+        <div class="tier-price">
+          <span class="amount">$50</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="tier-setup">$300 one-time setup</div>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Custom-coded static website</li>
+          <li>$0/mo hosting via GitHub Pages</li>
+          <li>Domain registration &amp; DNS</li>
+          <li>Google Business profile setup</li>
+          <li>Weekly maintenance &amp; updates</li>
+          <li>Security monitoring</li>
+          <li>24/7 response</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal reveal-delay-1">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="20" cy="20" r="3.5" fill="currentColor"/><circle cx="20" cy="20" r="9" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="1.5" opacity="0.22"/></svg></span>
+        <div class="tier-name">Presence</div>
+        <div class="tier-price">
+          <span class="amount">$75</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="tier-setup">$400 one-time setup</div>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Everything in Foundation</li>
+          <li>Apple Maps &amp; Yelp setup</li>
+          <li>Schema markup &amp; local SEO</li>
+          <li>Google Merchant Center &amp; Shopping feed</li>
+          <li>Profile &amp; banner reformatting</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal reveal-delay-2">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 6L34 18L20 36L6 18Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><line x1="6" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 18L20 6L26.5 18" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        <div class="tier-name">Brand</div>
         <div class="tier-price">
           <span class="amount">$100</span>
           <span class="period">/mo</span>
         </div>
-        <div class="tier-setup">$300 one-time setup fee</div>
+        <div class="tier-setup">$600 one-time setup</div>
         <hr class="tier-divider" />
         <ul class="tier-features">
-          <li>Custom-coded static website</li>
-          <li>$0/month hosting via GitHub Pages</li>
-          <li>Google Business profile setup and optimization</li>
-          <li>Weekly maintenance and content updates</li>
-          <li>Security monitoring</li>
-          <li>24/7 emergency support access</li>
-          <li>Monthly performance report</li>
+          <li>Everything in Presence</li>
+          <li>Logo &amp; brand identity</li>
+          <li>Print menu &amp; collateral design</li>
+          <li>Merchandise design</li>
+          <li>Cross-platform asset sync</li>
         </ul>
-        <a href="contact.html" class="tier-cta">Start with Foundation</a>
+        <a href="contact.html" class="tier-cta">Get Started</a>
       </div>
 
-      <div class="tier-card featured reveal reveal-delay-1">
+      <div class="tier-card featured reveal reveal-delay-3">
         <div class="tier-badge">Most Popular</div>
-        <div class="tier-name">Growth</div>
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="20" cy="20" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M20 7v4M20 29v4M7 20h4M29 20h4M10.5 10.5l3 3M26.5 26.5l3 3M29.5 10.5l-3 3M13.5 26.5l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+        <div class="tier-name">Operations</div>
         <div class="tier-price">
           <span class="amount">$150</span>
           <span class="period">/mo</span>
         </div>
-        <div class="tier-setup">$500 one-time setup fee</div>
+        <div class="tier-setup">$900 one-time setup</div>
         <hr class="tier-divider" />
         <ul class="tier-features">
-          <li>Everything in Foundation</li>
-          <li>POS-to-delivery platform automation</li>
-          <li>Kitchen printer integration</li>
-          <li>Staff scheduling centralization</li>
-          <li>Team messaging setup</li>
-          <li>Digital onboarding for new hires</li>
-          <li>Compliance document storage</li>
+          <li>Everything in Brand</li>
+          <li>Toast hardware setup &amp; API sync</li>
+          <li>Toast online ordering &amp; modifiers</li>
+          <li>Tip pooling automation</li>
+          <li>Staff scheduling &amp; messaging</li>
+          <li>Management reporting</li>
+          <li>Hiring &amp; digital onboarding</li>
         </ul>
-        <a href="contact.html" class="tier-cta">Start with Growth</a>
+        <a href="contact.html" class="tier-cta">Get Started</a>
       </div>
 
-      <div class="tier-card reveal reveal-delay-2">
-        <div class="tier-name">Sovereign - Full Partner</div>
+      <div class="tier-card reveal reveal-delay-4">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 34V17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M20 25C18 21 11 20 9 13C15 11 21 16 20 25Z" fill="currentColor" opacity="0.75"/><path d="M20 19C22 15 29 13 31 7C25 5 19 10 20 19Z" fill="currentColor" opacity="0.5"/></svg></span>
+        <div class="tier-name">Growth</div>
         <div class="tier-price">
           <span class="amount">$250</span>
           <span class="period">/mo</span>
         </div>
-        <div class="tier-setup">$850 one-time setup fee</div>
+        <div class="tier-setup">$1,200 one-time setup</div>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Everything in Operations</li>
+          <li>Photography shoot (quarterly)</li>
+          <li>30-day social content calendar</li>
+          <li>DoorDash storefront rebuild</li>
+          <li>Single intake channel</li>
+          <li>Urban discovery campaign</li>
+          <li>Music distribution account setup &amp; training</li>
+          <li>Streaming profile &amp; release strategy</li>
+          <li>Playlist pitching &amp; curator outreach</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal reveal-delay-5">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="15" width="28" height="19" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M15 15V12C15 10.9 15.9 10 17 10H23C24.1 10 25 10.9 25 12V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="24" x2="34" y2="24" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="tier-name">Business</div>
+        <div class="tier-price">
+          <span class="amount">$400</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="tier-setup">$2,500 one-time setup</div>
         <hr class="tier-divider" />
         <ul class="tier-features">
           <li>Everything in Growth</li>
-          <li>Monthly growth strategy session</li>
-          <li>Professional photography (quarterly)</li>
-          <li>Menu design and branding updates</li>
-          <li>Merchandise launch via Shopify</li>
-          <li>Marketing campaign planning</li>
-          <li>Competitor and market awareness</li>
+          <li>CRM &amp; client management</li>
+          <li>Email automation &amp; campaigns</li>
+          <li>Proposals, contracts &amp; e-signature</li>
+          <li>Invoicing &amp; billing system</li>
+          <li>Booking &amp; scheduling</li>
+          <li>Analytics dashboard</li>
+          <li>Client portal</li>
+          <li>Loyalty &amp; gift card system</li>
+          <li>Document &amp; compliance storage</li>
+          <li>Feedback &amp; survey system</li>
+          <li>Estimate builder</li>
+          <li>Field service management</li>
+          <li>Inventory management</li>
         </ul>
-        <a href="contact.html" class="tier-cta">Start with Sovereign</a>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </div>
+
+      <div class="tier-card reveal" style="grid-column: span 2;">
+        <span class="tier-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 5C20 5 31 9 31 21L25 29H15L9 21C9 9 20 5 20 5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M15 29L12 35L18 33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 29L28 35L22 33" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div class="tier-name">Enterprise</div>
+        <div class="tier-price">
+          <span class="amount" style="font-size:2.5rem;">Quote</span>
+        </div>
+        <div class="tier-setup">Quote — min. $2,500 deposit</div>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Everything in Business</li>
+          <li>Custom app development (web or mobile)</li>
+          <li>App store publishing — Apple &amp; Google Play</li>
+          <li>Software distribution infrastructure</li>
+          <li>API &amp; third-party integration layer</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get a Quote</a>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- MARKET COMPARISON TABLE -->
+<section style="background: var(--surface-1); border-top: 1px solid var(--line);">
+  <div class="container">
+
+    <div class="sec-row reveal">
+      <span class="sec-idx">—</span>
+      <span class="sec-lbl">vs. Market Rate</span>
+    </div>
+
+    <h2 class="reveal reveal-delay-1">What the market charges for the same scope.</h2>
+    <p class="reveal reveal-delay-2" style="color: var(--muted-dark); max-width: 600px; margin-top: 0.5rem;">
+      Actual current rates from freelancers, agencies, and the SaaS platforms that each handle one of these things separately — not estimates.
+    </p>
+
+    <div style="overflow-x: auto; margin-top: var(--s5);" class="reveal reveal-delay-3">
+      <table class="mct">
+        <thead>
+          <tr>
+            <th class="mct-h-tier">Tier</th>
+            <th class="mct-h-ours" colspan="2">Your price</th>
+            <th class="mct-h-mkt" colspan="2">Market rate</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th class="mct-h-ours mct-sub">Setup</th>
+            <th class="mct-h-ours mct-sub">Monthly</th>
+            <th class="mct-h-mkt mct-sub">Setup</th>
+            <th class="mct-h-mkt mct-sub">Monthly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mct-name">Launch</td>
+            <td class="mct-our">$50 flat</td>
+            <td class="mct-our">—</td>
+            <td class="mct-mkt">$500–2,000</td>
+            <td class="mct-mkt">—</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Foundation</td>
+            <td class="mct-our">$300</td>
+            <td class="mct-our">$50/mo</td>
+            <td class="mct-mkt">$2,000–4,000</td>
+            <td class="mct-mkt">$100–200/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Presence</td>
+            <td class="mct-our">$400</td>
+            <td class="mct-our">$75/mo</td>
+            <td class="mct-mkt">$2,500–5,000</td>
+            <td class="mct-mkt">$150–300/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Brand</td>
+            <td class="mct-our">$600</td>
+            <td class="mct-our">$100/mo</td>
+            <td class="mct-mkt">$4,500–10,000</td>
+            <td class="mct-mkt">$200–400/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Operations</td>
+            <td class="mct-our">$900</td>
+            <td class="mct-our">$150/mo</td>
+            <td class="mct-mkt">$5,000–12,000</td>
+            <td class="mct-mkt">$350–700/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Growth</td>
+            <td class="mct-our">$1,200</td>
+            <td class="mct-our">$250/mo</td>
+            <td class="mct-mkt">$6,000–15,000</td>
+            <td class="mct-mkt">$700–1,500/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Business</td>
+            <td class="mct-our">$2,500</td>
+            <td class="mct-our">$400/mo</td>
+            <td class="mct-mkt">$15,000–40,000</td>
+            <td class="mct-mkt">$1,000–2,600/mo</td>
+          </tr>
+          <tr>
+            <td class="mct-name">Enterprise</td>
+            <td class="mct-our">Quote</td>
+            <td class="mct-our">Quote</td>
+            <td class="mct-mkt">$25,000–75,000+</td>
+            <td class="mct-mkt">$5,000+/mo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </section>
 
@@ -115,95 +341,106 @@
 <section>
   <div class="container">
     <p class="section-label reveal">A La Carte Modules</p>
-    <h2 class="reveal reveal-delay-1">One-time add-ons.</h2>
+    <h2 class="reveal reveal-delay-1">Only pay for what you need.</h2>
     <p class="lead reveal reveal-delay-2" style="margin-top: 0.5rem;">
-      Don't need a full tier upgrade? Add specific capabilities without changing your monthly commitment.
+      Every module is a one-time fee. No recurring charge, no platform subscription — just the capability wired in and working. Priced so the math actually makes sense for a small business.
     </p>
 
-    <div class="alacarte-grid">
-      <div class="module-card reveal">
-        <div class="module-info">
-          <h3>Google Business Setup</h3>
-          <p>Profile creation, verification, and optimization for local search visibility.</p>
-        </div>
-        <div class="module-price">$75</div>
-      </div>
-      <div class="module-card reveal reveal-delay-1">
-        <div class="module-info">
-          <h3>Delivery Integration</h3>
-          <p>Connect your POS to kitchen printers and delivery platforms.</p>
-        </div>
-        <div class="module-price">$150</div>
-      </div>
-      <div class="module-card reveal reveal-delay-1">
-        <div class="module-info">
-          <h3>Hiring & Compliance</h3>
-          <p>Digital onboarding infrastructure for new staff.</p>
-        </div>
-        <div class="module-price">$150</div>
-      </div>
-      <div class="module-card reveal reveal-delay-2">
-        <div class="module-info">
-          <h3>Staff Management</h3>
-          <p>Scheduling and team messaging centralized in one place.</p>
-        </div>
-        <div class="module-price">$100</div>
-      </div>
-      <div class="module-card reveal">
-        <div class="module-info">
-          <h3>Creative Suite</h3>
-          <p>Professional photography and menu design refresh.</p>
-        </div>
-        <div class="module-price">$350</div>
-      </div>
-      <div class="module-card reveal reveal-delay-1">
-        <div class="module-info">
-          <h3>Merchandise Launch</h3>
-          <p>Shopify Buy Button integration and product page setup.</p>
-        </div>
-        <div class="module-price">$150</div>
-      </div>
-      <div class="module-card reveal reveal-delay-2">
-        <div class="module-info">
-          <h3>Physical Infrastructure</h3>
-          <p>On-site wiring, hardware installation, and configuration.</p>
-        </div>
-        <div class="module-price">$150/day</div>
-      </div>
-      <div class="module-card reveal">
-        <div class="module-info">
-          <h3>Urban Discovery Campaign</h3>
-          <p>Trackable, street-level QR marketing for bands and local launches.</p>
-        </div>
-        <div class="module-price">$200+</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <table class="services-table reveal reveal-delay-3" aria-label="A la carte services and pricing">
+      <tbody>
 
-<!-- COMPARISON -->
-<section style="background: var(--bg);">
-  <div class="container">
-    <p class="section-label reveal">Why Not Just Use...</p>
-    <h2 class="reveal reveal-delay-1">The honest comparison.</h2>
+        <tr class="services-table__cat"><td colspan="2">Web &amp; Domain</td></tr>
+        <tr><td><span class="svc-name">Domain Registration &amp; DNS</span><span class="svc-desc">Registered in your name, on your account, with full credentials handed directly to you — pointed where it needs to go</span></td><td class="svc-price">$25 + domain</td></tr>
+        <tr><td><span class="svc-name">Custom Website</span><span class="svc-desc">Static, custom-coded site with $0/mo hosting via GitHub Pages</span></td><td class="svc-price">Included in tiers</td></tr>
 
-    <div class="comparison-grid">
-      <div class="comparison-item reveal">
-        <div class="comparison-label">vs. GoDaddy / Squarespace</div>
-        <h3>Platform tax. Design limits. Slow sites.</h3>
-        <p>Those platforms charge you monthly forever and lock you in. You get a custom-coded site with $0/mo hosting and no platform dependency.</p>
-      </div>
-      <div class="comparison-item reveal reveal-delay-1">
-        <div class="comparison-label">vs. an Agency</div>
-        <h3>Finished product. Then silence.</h3>
-        <p>Agencies hand you a site and disappear into a ticket queue. You get direct access to the person who built it, always.</p>
-      </div>
-      <div class="comparison-item reveal reveal-delay-2">
-        <div class="comparison-label">vs. Generic IT Support</div>
-        <h3>Technical only. No creative layer.</h3>
-        <p>IT shops don't do branding, photography, or marketing. I cover both the technical infrastructure and the creative side.</p>
-      </div>
-    </div>
+        <tr class="services-table__cat"><td colspan="2">POS &amp; Restaurant Tech</td></tr>
+        <tr><td colspan="2"><span class="svc-desc" style="display:block;padding:0.5rem 0;color:var(--ink-dim);font-size:0.75rem;">Platform chosen at consultation — Toast, Square, or Clover. <strong style="color:var(--ink);">Hardware, software subscriptions, and transaction fees are paid by you directly to the platform — not to me.</strong> The prices below are labor only. Platform costs for reference:<br/><br/>
+          <strong style="color:var(--ink);">Toast</strong> — $600–$1,000+/terminal · $69–$289/mo software · 2.49% + 15¢/transaction<br/>
+          <strong style="color:var(--ink);">Square</strong> — $49–$799 hardware · free–$165/mo software · 2.6% + 10¢/transaction<br/>
+          <strong style="color:var(--ink);">Clover</strong> — $49–$1,699 hardware · $14.95–$84.95/mo software · rates vary by provider. Avoid hardware leases — buying outright is almost always cheaper long-term.
+        </span></td></tr>
+        <tr><td><span class="svc-name">POS Hardware Setup</span><span class="svc-desc">On-site installation of your terminal, tablet, and kitchen display — you purchase hardware directly from Toast, Square, or Clover. This fee covers labor only.</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">POS Menu &amp; Ordering Configuration</span><span class="svc-desc">Full menu build-out, modifier groups, and online ordering setup — you're trained to update it yourself so no call is needed for a price change. Software subscription paid directly to the platform.</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">API Menu Sync</span><span class="svc-desc">Real-time price and item sync between POS and website (Toast API — not available on all platforms)</span></td><td class="svc-price">$100</td></tr>
+        <tr><td><span class="svc-name">Tip Pooling Automation</span><span class="svc-desc">Auto-calculate tip splits by clock-in overlap with full tax and fee deductions</span></td><td class="svc-price">$75</td></tr>
+        <tr><td><span class="svc-name">Management Reporting</span><span class="svc-desc">Automated end-of-shift and weekly reports for management</span></td><td class="svc-price">$50</td></tr>
+        <tr><td colspan="2"><span class="svc-desc" style="display:block;padding:0.5rem 0;color:var(--ink-dim);font-size:0.75rem;">Scheduling platform chosen at consultation — ScheduleFly, 7shifts, or custom-built. Third-party subscriptions paid directly to the platform. The custom-built option is a one-time build cost with no ongoing subscription — you own it outright.<br/><br/>
+          <strong style="color:var(--ink);">ScheduleFly</strong> — $30/mo up to 10 staff · $40/mo 11–20 · $50/mo 21–30 · scales up from there<br/>
+          <strong style="color:var(--ink);">7shifts</strong> — free up to 30 employees (1 location) · $29.99/mo Entrée · $69.99/mo The Works<br/>
+          <strong style="color:var(--ink);">Custom-built</strong> — one-time fee, no subscription, built specifically for your operation
+        </span></td></tr>
+        <tr><td><span class="svc-name">ScheduleFly Setup</span><span class="svc-desc">Account created, configured, and handed over — you pay ScheduleFly directly ($30–50+/mo depending on staff size), full admin access is yours from day one</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">7shifts Setup</span><span class="svc-desc">Account created, configured, and handed over — you pay 7shifts directly (free–$70/mo depending on plan), full admin access is yours from day one</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Custom Scheduling Software</span><span class="svc-desc">Built-from-scratch staff scheduling tool — shifts, coverage requests, and messaging. No subscription, ever. You own it.</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Hiring &amp; Digital Onboarding</span><span class="svc-desc">E-signature forms, compliance docs, and onboarding packets built and handed off — yours to reuse forever without coming back</span></td><td class="svc-price">$75</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Local SEO &amp; Directories</td></tr>
+        <tr><td><span class="svc-name">Google Business Profile</span><span class="svc-desc">Claimed in your name, verified, and fully optimized — owner access stays with you to update hours, posts, and photos anytime</span></td><td class="svc-price">$25</td></tr>
+        <tr><td><span class="svc-name">Apple Maps &amp; Yelp</span><span class="svc-desc">Claimed and aligned in your name — owner access is yours to manage going forward</span></td><td class="svc-price">$25</td></tr>
+        <tr><td><span class="svc-name">Schema Markup &amp; Local SEO</span><span class="svc-desc">Structured data and local keyword injection written directly into your site's source — no plugin, no platform, no dependency</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Google Merchant Center</span><span class="svc-desc">Connected to your account — real-time local inventory in Google Shopping, with you in full control of the feed</span></td><td class="svc-price">$50</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Creative &amp; Media</td></tr>
+        <tr><td><span class="svc-name">Place Photography</span><span class="svc-desc">Environmental and location shots — interior, exterior, and atmosphere formatted for website, Google Business, and social</span></td><td class="svc-price">$75</td></tr>
+        <tr><td><span class="svc-name">Product Photography</span><span class="svc-desc">Styled product shots with controlled lighting — formatted for website, POS, delivery platforms, and print</span></td><td class="svc-price">$100</td></tr>
+        <tr><td><span class="svc-name">Set &amp; Model Photography</span><span class="svc-desc">Full production shoot with model, set styling, and product — campaign-ready assets for web, social, and advertising</span></td><td class="svc-price">$200</td></tr>
+        <tr><td><span class="svc-name">Logo &amp; Brand Identity</span><span class="svc-desc">Logo, typography, color palette, and favicon — all source files delivered in every format. Use them anywhere, with any printer or designer, forever</span></td><td class="svc-price">$75</td></tr>
+        <tr><td><span class="svc-name">Print Menu Design</span><span class="svc-desc">Table card, mobile, and delivery-ready PDF layout</span></td><td class="svc-price">$25</td></tr>
+        <tr><td><span class="svc-name">Profile &amp; Banner Reformatting</span><span class="svc-desc">Circular and widescreen cuts for every platform</span></td><td class="svc-price">$15</td></tr>
+        <tr><td><span class="svc-name">Merchandise Design</span><span class="svc-desc">Vector artwork for shirts, hats, totes, and print materials — production-ready files for any printer</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Merchandise Printing</span><span class="svc-desc">Physical print runs coordinated through Duck Duck Goose Tees — apparel, hats, totes, and more. Pricing passed through at cost.</span></td><td class="svc-price">At cost</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Growth &amp; Marketing</td></tr>
+        <tr><td><span class="svc-name">30-Day Social Content Calendar</span><span class="svc-desc">Thirty days of content built and scheduled together — plus a repeatable system so you can fill the next month yourself without help</span></td><td class="svc-price">$75</td></tr>
+        <tr><td><span class="svc-name">DoorDash Storefront Rebuild</span><span class="svc-desc">Rebuilt inside your DoorDash account — optimized photos, modifiers, and menu structure, with you trained to maintain it going forward</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Single Intake Channel</span><span class="svc-desc">One message propagates changes across website, POS, social, and delivery instantly</span></td><td class="svc-price">$50</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Music &amp; Artist Marketing</td></tr>
+        <tr><td><span class="svc-name">Music Distribution Setup</span><span class="svc-desc">DistroKid or CD Baby account creation, walkthrough, and first upload together — you own the account and handle every future release yourself, forever</span></td><td class="svc-price">$25</td></tr>
+        <tr><td><span class="svc-name">Streaming Profile Setup</span><span class="svc-desc">Spotify &amp; Apple Music for Artists claimed and built out together — bio, Canvas, header, Artist Pick. You keep full access and update it yourself going forward</span></td><td class="svc-price">$25</td></tr>
+        <tr><td><span class="svc-name">Release Strategy &amp; Pre-Save</span><span class="svc-desc">One session: timeline, pre-save link, and social rollout plan handed off as a reusable template you can run yourself on every future release</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Playlist Pitching &amp; Curator Outreach</span><span class="svc-desc">Editorial submission + personalized outreach to genre-matched curators via Groover and SubmitHub</span></td><td class="svc-price">$35</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Business Software</td></tr>
+        <tr><td><span class="svc-name">CRM &amp; Client Management</span><span class="svc-desc">Custom pipeline, contact records, and follow-up tracking — built to your workflow, source code delivered, no SaaS subscription</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Email Automation &amp; Campaigns</span><span class="svc-desc">Drip sequences, transactional email, and newsletter infrastructure — custom-built and handed off, you control every send</span></td><td class="svc-price">$75+</td></tr>
+        <tr><td><span class="svc-name">Proposals &amp; Contracts</span><span class="svc-desc">Template system with e-signature and delivery built once — you generate and send every future proposal yourself</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Invoicing &amp; Billing</span><span class="svc-desc">Custom portal with payment integration and automated reminders — source code delivered, no third-party billing platform taking a cut</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Booking &amp; Scheduling</span><span class="svc-desc">Self-serve availability with deposits and confirmations — custom-built on your domain, no booking platform subscription</span></td><td class="svc-price">$75+</td></tr>
+        <tr><td><span class="svc-name">Inventory Management</span><span class="svc-desc">Stock tracking and low-inventory alerts — custom-built tool, source code yours, no SaaS subscription</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Analytics Dashboard</span><span class="svc-desc">Revenue, labor, and platform data in one automatic view — custom-built, no BI subscription, data stays yours</span></td><td class="svc-price">$75+</td></tr>
+        <tr><td><span class="svc-name">Client Portal</span><span class="svc-desc">Branded login for projects, documents, and invoices — custom-built on your domain, fully owned by you</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Field Service Management</span><span class="svc-desc">Work orders, dispatch, and job tracking — custom-built for your operation, source code delivered outright</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Loyalty &amp; Gift Card System</span><span class="svc-desc">Point tracking and digital gift cards tied to your POS — custom-built, no loyalty platform subscription</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">Estimate Builder</span><span class="svc-desc">Line-item quotes with PDF delivery — built once, yours forever, send from the job site in under two minutes</span></td><td class="svc-price">$50+</td></tr>
+        <tr><td><span class="svc-name">Document &amp; Compliance Storage</span><span class="svc-desc">Contracts, permits, and certifications with expiration alerts — custom-built, hosted on your own infrastructure</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">Feedback &amp; Survey System</span><span class="svc-desc">Post-visit capture and aggregated reporting — custom-built, no survey platform subscription, your data stays yours</span></td><td class="svc-price">$35</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">App &amp; Software Development</td></tr>
+        <tr><td><span class="svc-name">Custom App Development</span><span class="svc-desc">Web or mobile application — full source ownership, no platform lock-in</span></td><td class="svc-price">Quote</td></tr>
+        <tr><td><span class="svc-name">App Store Publishing</span><span class="svc-desc">Submitted under your developer accounts — you keep full ownership and publishing rights after the first release</span></td><td class="svc-price">$75</td></tr>
+        <tr><td><span class="svc-name">Software Distribution</span><span class="svc-desc">Licensing infrastructure, download delivery, and update pipelines</span></td><td class="svc-price">$50</td></tr>
+        <tr><td><span class="svc-name">API &amp; Integration Layer</span><span class="svc-desc">Connect your app to any third-party service — POS, CRM, payments, scheduling</span></td><td class="svc-price">$75+</td></tr>
+
+        <tr class="services-table__cat"><td colspan="2">Premium Web Experiences</td></tr>
+        <tr>
+          <td>
+            <span class="svc-name">Liquid Distortion &amp; Fluid Simulation</span>
+            <span class="svc-desc">Images and layouts behave like real physical matter — hover over an image or navigate to a new page and the visuals ripple, warp, or stretch as if trapped under water or made of molten glass. A fragment shader calculates the exact distance between each pixel and the user's cursor in real time, distorting texture coordinates to produce fluid, physically-plausible motion. No CSS filter tricks — raw GPU execution via custom GLSL shaders. Built with Three.js, PixiJS, or raw WebGL. Source code delivered outright.</span>
+          </td>
+          <td class="svc-price">Quote</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="svc-name">Scroll-Tied 3D Camera Flythrough</span>
+            <span class="svc-desc">Your scroll wheel becomes the controller — the camera flies through a fully custom 3D environment, past floating product pieces, through architectural layouts, or around abstract shapes, stopping precisely at each content section. The camera path is mapped to the browser's scroll percentage in real time, so every frame of movement is intentional and fluid. Built with Spline for rapid interactive 3D design, or React Three Fiber for fully custom rendering and physics. Source code delivered outright — no subscription to a 3D platform, no lock-in.</span>
+          </td>
+          <td class="svc-price">Quote</td>
+        </tr>
+
+      </tbody>
+    </table>
+
   </div>
 </section>
 
@@ -220,9 +457,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Ashton Stubblefield</span>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <p>© 2026 Ashton Stubblefield - Guthrie, OK</p>
     <div class="footer-links">
       <a href="services.html">Services</a>
@@ -233,12 +472,7 @@
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/effects.js"></script>
 
 </body>
 </html>

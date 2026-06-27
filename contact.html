@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Ashton Stubblefield</title>
   <meta name="description" content="Book a free 30-minute consultation. No ticket queue - direct access to the person who builds and maintains your systems." />
   <link rel="canonical" href="https://ashstu.codes/contact.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="scroll-bar" id="scroll-bar"></div>
+
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ashton Stubblefield</a>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#pitch">The Pitch</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="cv.html" target="_blank">Resume</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html" target="_blank">Credentials</a></li>
       <li><a href="contact.html" class="nav-cta active">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#pitch">The Pitch</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" target="_blank">Credentials</a>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</div>
+
+<main id="main-content">
 
 <div class="page-hero">
   <div class="container">
@@ -46,6 +70,17 @@
           person who built your site, knows your setup, and actually picks up the phone.
         </p>
 
+        <div style="margin: 1.5rem 0; padding: 1rem 1.25rem; background: var(--surface-2); border-left: 3px solid var(--gold); border-radius: 2px;">
+          <p style="font-size: 0.8rem; color: var(--ink-dim); margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">Response time</p>
+          <p style="font-size: 1rem; color: var(--ink); font-weight: 600;">Within 2 hours, Mon–Sat</p>
+          <p style="font-size: 0.82rem; color: var(--ink-dim); margin-top: 0.25rem;">Active clients: 24/7, including emergencies</p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <p style="font-size: 0.75rem; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 0.4rem;">Or call / text directly</p>
+          <a href="tel:+14057128959" style="font-size: 1.5rem; font-weight: 700; color: var(--ink); text-decoration: none; letter-spacing: -0.02em;">405.712.8959</a>
+        </div>
+
         <div class="contact-details">
           <div class="contact-detail">
             <div class="icon">📍</div>
@@ -61,11 +96,11 @@
           </div>
           <div class="contact-detail">
             <div class="icon">📅</div>
-            <span>Free consultations available Mon–Sat - phone or Zoom</span>
+            <span>Free consultations available Mon–Sat - phone, Zoom, or in person</span>
           </div>
           <div class="contact-detail">
             <div class="icon">⚡</div>
-            <span>Emergency support 24/7 for active clients</span>
+            <span>24/7 response for active clients</span>
           </div>
           <div class="contact-detail">
             <div class="icon">💼</div>
@@ -77,30 +112,38 @@
       <div class="contact-form reveal reveal-delay-1">
         <form action="https://formspree.io/f/mykoejdr" method="POST">
 
+          <!-- Honeypot — bots fill this, humans don't see it -->
+          <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+              <input type="text" id="name" name="name" placeholder="Your name" maxlength="100" required />
             </div>
             <div class="form-group">
               <label for="business">Business Name</label>
-              <input type="text" id="business" name="business" placeholder="Your business" />
+              <input type="text" id="business" name="business" placeholder="Your business" maxlength="120" />
             </div>
           </div>
 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" required />
+            <input type="email" id="email" name="email" placeholder="you@yourbusiness.com" maxlength="200" required />
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="interest">What are you looking for?</label>
               <select id="interest" name="interest">
-                <option value="">Select one</option>
-                <option value="foundation">Foundation Tier ($100/mo)</option>
-                <option value="growth">Growth Tier ($150/mo)</option>
-                <option value="sovereign">Sovereign Tier ($250/mo)</option>
+                <option value="" disabled selected>Select one</option>
+                <option value="launch">Launch — $50 flat (one-time, no ongoing service)</option>
+                <option value="foundation">Foundation — $50/mo + $300 setup</option>
+                <option value="presence">Presence — $75/mo + $400 setup</option>
+                <option value="brand">Brand — $100/mo + $600 setup</option>
+                <option value="operations">Operations — $150/mo + $900 setup</option>
+                <option value="growth">Growth — $250/mo + $1,200 setup</option>
+                <option value="business">Business — $400/mo + $2,500 setup</option>
+                <option value="enterprise">Enterprise — Quote</option>
                 <option value="alacarte">A La Carte Module</option>
                 <option value="unsure">Not sure yet</option>
               </select>
@@ -108,17 +151,18 @@
             <div class="form-group">
               <label for="call-type">Preferred consultation format</label>
               <select id="call-type" name="call_type">
-                <option value="">Select one</option>
+                <option value="" disabled selected>Select one</option>
                 <option value="phone">Phone call</option>
                 <option value="zoom">Zoom call</option>
-                <option value="either">Either works</option>
+                <option value="inperson">In person</option>
+                <option value="either">Any of the above</option>
               </select>
             </div>
           </div>
 
           <div class="form-group">
             <label for="message">Tell me about your business</label>
-            <textarea id="message" name="message" placeholder="What does your operation look like? What's broken, slow, or missing?"></textarea>
+            <textarea id="message" name="message" rows="5" maxlength="3000" placeholder="What does your operation look like? What's broken, slow, or missing?"></textarea>
           </div>
 
           <div class="form-group">
@@ -132,9 +176,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Ashton Stubblefield</span>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <p>© 2026 Ashton Stubblefield - Guthrie, OK</p>
     <div class="footer-links">
       <a href="services.html">Services</a>
@@ -145,12 +191,7 @@
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/effects.js"></script>
 
 </body>
 </html>

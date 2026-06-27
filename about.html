@@ -1,37 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Ashton Stubblefield</title>
-  <meta name="description" content="IT Specialist, web developer, and OSU-OKC student. Six years building custom digital infrastructure for local businesses." />
+  <meta name="description" content="IT Specialist and web developer. Six years building custom digital infrastructure for local businesses." />
   <link rel="canonical" href="https://ashstu.codes/about.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="scroll-bar" id="scroll-bar"></div>
+
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ashton Stubblefield</a>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="index.html#pitch">The Pitch</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="cv.html" target="_blank">Resume</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="cv.html" target="_blank">Credentials</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#pitch">The Pitch</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" target="_blank">Credentials</a>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</div>
 
-<div class="page-hero">
+<main id="main-content">
+
+<div class="page-hero" style="padding-bottom: 0; overflow: visible;">
   <div class="container">
-    <p class="section-label reveal">About</p>
-    <h1 class="reveal reveal-delay-1">Precision in code.<br />People at the center.</h1>
-    <p class="reveal reveal-delay-2">Six years building custom digital infrastructure - while simultaneously studying trauma-informed care, victims' rights, and the systems designed to protect people.</p>
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: flex-end;">
+
+      <div>
+        <p class="section-label reveal">About</p>
+        <h1 class="reveal reveal-delay-1">Precision in code.<br />People at the center.</h1>
+        <p class="reveal reveal-delay-2" style="color: var(--text-dim); max-width: 480px; line-height: 1.72; margin-top: 1.5rem; padding-bottom: 3rem;">
+          Six years building custom digital infrastructure for local businesses and professionals.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-3 about-hero-portrait" style="flex-shrink: 0; align-self: flex-end;">
+        <img
+          src="Images/Profile-3.png"
+          alt="Ashton Stubblefield"
+          style="width: 300px; height: 360px; object-fit: cover; object-position: center top; display: block; border: 1px solid var(--border-med); border-bottom: none;"
+        />
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -46,10 +86,10 @@
           Since 2020 I've progressed from digital design to full business software development, earning an IT Specialist certification at Francis Tuttle Technology Center and ranking 2nd in Oklahoma for C# Programming.
         </p>
         <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.5rem;">
-          I currently provide tailored web architecture for local businesses and high-level professionals, while pursuing dual degrees in Psychology and Crime Victim Advocacy at OSU-OKC.
+          I currently provide tailored web architecture for local businesses and professionals under independent contract.
         </p>
         <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted);">
-          My background across healthcare administration and high-volume service environments has built a foundation in operational efficiency and crisis support. I balance technical precision with a focus on trauma-informed care - working toward a future in social work and law.
+          My background across high-volume service environments has built a foundation in operational efficiency and precision — knowing exactly what a business needs to run without friction.
         </p>
       </div>
 
@@ -68,16 +108,6 @@
               <span class="tag">GitHub Pages</span>
               <span class="tag">UI / UX Design</span>
               <span class="tag">Toast POS</span>
-            </div>
-          </div>
-          <div class="glass-card" style="padding: 1rem 1.25rem; border-radius: var(--r-md);">
-            <p style="font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem;">Human Services</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-              <span class="tag">Trauma-Informed Care</span>
-              <span class="tag">Healthcare Administration</span>
-              <span class="tag">Crisis Intervention</span>
-              <span class="tag">Operational Efficiency</span>
-              <span class="tag">Clinical Support</span>
             </div>
           </div>
         </div>
@@ -188,7 +218,7 @@
             <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end;">
               <span style="background: rgba(254,92,0,0.08); border: 1px solid rgba(254,92,0,0.18); color: var(--accent); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;">2nd in Oklahoma - C# Programming</span>
               <span style="background: rgba(254,92,0,0.08); border: 1px solid rgba(254,92,0,0.18); color: var(--accent); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;">6th in Oklahoma - SQL Database Fundamentals</span>
-              <span style="background: rgba(0,0,0,0.05); border: 1px solid var(--border); color: var(--muted); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;">BPA Conference 2021</span>
+              <span style="background: rgba(0,0,0,0.05); border: 1px solid var(--border); color: var(--muted); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;">Business Professionals of America Conference 2021</span>
             </div>
           </div>
 
@@ -300,9 +330,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Ashton Stubblefield</span>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <p>© 2026 Ashton Stubblefield - Guthrie, OK</p>
     <div class="footer-links">
       <a href="about.html">About</a>
@@ -314,12 +346,7 @@
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/effects.js"></script>
 
 </body>
 </html>

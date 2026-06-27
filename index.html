@@ -1,322 +1,730 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashton Stubblefield - Operational Architecture for Local Businesses</title>
+  <title>Ashton Stubblefield — Operational Architecture for Local Business</title>
   <meta name="description" content="Custom websites, system integration, and on-call technical support for Guthrie businesses. No subscription bloat. One person to call." />
   <link rel="canonical" href="https://ashstu.codes/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,600&family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="scroll-bar" id="scroll-bar"></div>
+
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ashton Stubblefield</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
+    <a href="index.html" class="nav-logo" aria-label="Ashton Stubblefield — Home">
+      <img src="Images/Logo.png" alt="" role="presentation" class="nav-logo-img" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="index.html#pitch">The Pitch</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="cv.html" target="_blank">Resume</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html" target="_blank" rel="noopener">Credentials</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
+<div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+  <a href="index.html">Home</a>
+  <a href="index.html#pitch">The Pitch</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" target="_blank" rel="noopener">Credentials</a>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</div>
 
-    <div class="hero-eyebrow reveal">
-      <span>⚡</span> Serving Guthrie, OK and surrounding areas
+<main id="main-content">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO — "The Editorial Kicker"
+
+     LEAD GRAPHIC DESIGNER: The hero is now a newspaper front
+     page. Three typographic lines cascade in weight: light →
+     bold → oversized Cormorant italic gold. The kicker strip
+     at top functions like a magazine running header. Stats move
+     from decorative card boxes to a financial ledger strip —
+     the convention of accounting documents, not marketing pages.
+
+     SENIOR WEB DESIGNER: CSS Grid with four named rows lets
+     the statement block expand to fill the available viewport
+     height regardless of kicker or ledger size. The ledger
+     bleeds to viewport edges via negative margin. All layout
+     is pure CSS — no JS layout dependencies.
+
+     UX PSYCHOLOGIST: The weight cascade creates a tension arc.
+     "The team" reads easily (light, open) → "you couldn't"
+     lands with resistance (full bold) → "afford." resolves in
+     gold at the LARGEST size of the three — the punchline is
+     bigger than the setup, which is rare and therefore
+     memorable. "At a price you can." whispers the answer after
+     the headline shouts the problem. By the time the user
+     reaches the single CTA, they have emotionally committed.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero-ed">
+
+  <!-- KICKER: Newspaper-style identifier. Processes subconsciously
+       before the headline engages — reader knows who this is and
+       what they do before conscious attention arrives at the h1. -->
+  <header class="hero-kicker reveal" aria-label="Location and service category">
+    <div class="kicker-signal">
+      <!-- Pulsing dot: "live / available now" sub-signal -->
+      <span class="kicker-dot" aria-hidden="true"></span>
+      <span>Guthrie, Oklahoma</span>
     </div>
+    <div class="kicker-hr" aria-hidden="true"></div>
+    <span class="kicker-cat">Operational Architecture</span>
+  </header>
 
-    <h1 class="reveal reveal-delay-1">
-      Your business deserves<br />an Operational Architect.
+  <!-- THE STATEMENT: Three-line typographic cascade.
+       Each line intentionally differs in weight and size.
+       This is a composed typographic object, not a standard h1. -->
+  <div class="hero-statement">
+    <h1 class="hero-hed">
+      <span class="hed-l hed-l1 reveal">The team</span>
+      <span class="hed-l hed-l2 reveal reveal-delay-1">you couldn't</span>
+      <!-- Gold + largest size: the answer arrives bigger than the problem -->
+      <em class="hed-l hed-l3 reveal reveal-delay-2">afford.</em>
     </h1>
+    <!-- Intimate whisper after the headline shout -->
+    <p class="hero-resolution reveal reveal-delay-3">At a price you can.</p>
+  </div>
 
-    <p class="lead reveal reveal-delay-2">
-      Not a template. Not a ticket queue. Custom-built infrastructure,
-      24/7 emergency access, and one person who knows your entire operation.
-    </p>
+  <!-- SINGLE CTA: One action. The micro-copy handles the "what does
+       this cost?" objection that a secondary ghost button used to
+       address — removing the choice paradox that split attention. -->
+  <div class="hero-cta-block reveal reveal-delay-4">
+    <a href="contact.html" class="btn btn-fire btn-lg">Book Free Consultation</a>
+    <p class="hero-micro">Web · IT · Marketing · Software — from $50 flat or $50/mo managed</p>
+  </div>
 
-    <div class="hero-actions reveal reveal-delay-3">
-      <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
-      <a href="services.html" class="btn btn-ghost">View Services</a>
+  <!-- LEDGER: Financial table strip instead of stat cards.
+       Ledger format = precision + accountability. Tells the
+       business owner: this person thinks in the same financial
+       terms you do. -->
+  <div class="hero-ledger" role="list" aria-label="Key service metrics">
+    <div class="ledger-item" role="listitem">
+      <span class="ledger-n">$0</span>
+      <span class="ledger-k">Monthly hosting</span>
+    </div>
+    <div class="ledger-div" aria-hidden="true"></div>
+    <div class="ledger-item" role="listitem">
+      <span class="ledger-n">24/7</span>
+      <span class="ledger-k">Response time</span>
+    </div>
+    <div class="ledger-div" aria-hidden="true"></div>
+    <div class="ledger-item" role="listitem">
+      <span class="ledger-n">1</span>
+      <span class="ledger-k">Point of contact</span>
+    </div>
+    <div class="ledger-div" aria-hidden="true"></div>
+    <div class="ledger-item" role="listitem">
+      <span class="ledger-n">$50</span>
+      <span class="ledger-k">Starting monthly</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     MARQUEE BAND — Client Type Ticker
+     ═══════════════════════════════════════════════════════════ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-inner">
+    <div class="marquee-track">
+      <span>Restaurants</span><span class="marquee-dot">·</span>
+      <span>Cafes</span><span class="marquee-dot">·</span>
+      <span>Retail</span><span class="marquee-dot">·</span>
+      <span>Boutiques</span><span class="marquee-dot">·</span>
+      <span>Home Services</span><span class="marquee-dot">·</span>
+      <span>Trades</span><span class="marquee-dot">·</span>
+      <span>Musicians</span><span class="marquee-dot">·</span>
+      <span>Photographers</span><span class="marquee-dot">·</span>
+      <span>Filmmakers</span><span class="marquee-dot">·</span>
+      <span>Marketing Directors</span><span class="marquee-dot">·</span>
+      <span>Artists</span><span class="marquee-dot">·</span>
+      <span>Actors</span><span class="marquee-dot">·</span>
+      <span>Specialty Services</span><span class="marquee-dot">·</span>
+      <span>Writers</span><span class="marquee-dot">·</span>
+      <span>Restaurants</span><span class="marquee-dot">·</span>
+      <span>Cafes</span><span class="marquee-dot">·</span>
+      <span>Retail</span><span class="marquee-dot">·</span>
+      <span>Boutiques</span><span class="marquee-dot">·</span>
+      <span>Home Services</span><span class="marquee-dot">·</span>
+      <span>Trades</span><span class="marquee-dot">·</span>
+      <span>Musicians</span><span class="marquee-dot">·</span>
+      <span>Photographers</span><span class="marquee-dot">·</span>
+      <span>Filmmakers</span><span class="marquee-dot">·</span>
+      <span>Marketing Directors</span><span class="marquee-dot">·</span>
+      <span>Artists</span><span class="marquee-dot">·</span>
+      <span>Actors</span><span class="marquee-dot">·</span>
+      <span>Specialty Services</span><span class="marquee-dot">·</span>
+      <span>Writers</span><span class="marquee-dot">·</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     THE ARCHITECTURE — "What used to take a whole team"
+
+     LEAD GRAPHIC DESIGNER: Ruled-list layout replaces the
+     numbered card grid. Each item is separated by a border-top
+     rule only — no boxes, no background fills. Content breathes
+     in open space rather than being caged in cards. The large
+     background number floats at near-opacity-zero as a chapter
+     marker; visible subliminally but not read consciously.
+
+     SENIOR WEB DESIGNER: 2-column grid per item (number col +
+     content col). Hover activates the dimmed number to 22%
+     opacity — a reward for attention without animation overhead.
+     Tech tags use the same gold-dim pill from the design system.
+
+     UX PSYCHOLOGIST: Ruled lists signal a methodology — this is
+     how a consultant's proposal reads, not a sales brochure.
+     The five items are a commitment arc: "here is the full scope
+     of what I do." By the time the reader finishes item 5
+     (ownership), they've been walked through a complete mental
+     simulation of working with this person.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-architecture">
+  <div class="container">
+
+    <div class="arch-header">
+      <div class="sec-row reveal">
+        <span class="sec-idx">02</span>
+        <span class="sec-lbl">The Architecture</span>
+      </div>
+      <h2 class="reveal reveal-delay-1">
+        What used to take<br>
+        <span class="serif-h">a whole team.</span>
+      </h2>
+      <p class="section-lead reveal reveal-delay-2">
+        Five disciplines. One retainer. Every deliverable owned by you from day one.
+      </p>
     </div>
 
-    <div class="hero-stats reveal reveal-delay-4">
-      <div class="stat-item">
-        <strong>$0</strong>
-        <span>Monthly hosting</span>
-      </div>
-      <div class="stat-item">
-        <strong>24/7</strong>
-        <span>Emergency access</span>
-      </div>
-      <div class="stat-item">
-        <strong>1</strong>
-        <span>Person for everything</span>
-      </div>
-      <div class="stat-item">
-        <strong>Local</strong>
-        <span>Guthrie, OK</span>
-      </div>
-    </div>
+    <div class="arch-grid">
 
+      <article class="arch-item reveal">
+        <span class="arch-num" aria-hidden="true">01</span>
+        <div class="arch-body">
+          <h3 class="arch-role">Your Web Developer</h3>
+          <p>Custom-coded site, $0/mo hosting, domain setup, weekly maintenance. The kind of work agencies charge $3,000–$10,000 to build and $200+/mo to maintain — $300 one-time setup and $50/mo here. Or $50 flat for a one-time build with no ongoing service.</p>
+          <div class="arch-tag-row">
+            <span class="arch-tag">HTML / CSS / JS</span>
+            <span class="arch-tag">GitHub Pages</span>
+            <span class="arch-tag">DNS &amp; Domain</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="arch-item reveal reveal-delay-1">
+        <span class="arch-num" aria-hidden="true">02</span>
+        <div class="arch-body">
+          <h3 class="arch-role">Your IT Director</h3>
+          <p>POS hardware setup, API integrations, staff systems, on-site configuration, hardware troubleshooting. One number to call — not three vendors blaming each other.</p>
+          <div class="arch-tag-row">
+            <span class="arch-tag">Toast POS</span>
+            <span class="arch-tag">Hardware</span>
+            <span class="arch-tag">API Sync</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="arch-item reveal reveal-delay-2">
+        <span class="arch-num" aria-hidden="true">03</span>
+        <div class="arch-body">
+          <h3 class="arch-role">Your Marketing Coordinator</h3>
+          <p>Brand identity, photography, social content calendars, SEO, Google Business, DoorDash optimization, email campaigns. The full marketing function, not a single deliverable.</p>
+          <div class="arch-tag-row">
+            <span class="arch-tag">Local SEO</span>
+            <span class="arch-tag">Photography</span>
+            <span class="arch-tag">DoorDash</span>
+            <span class="arch-tag">Social</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="arch-item reveal reveal-delay-3">
+        <span class="arch-num" aria-hidden="true">04</span>
+        <div class="arch-body">
+          <h3 class="arch-role">Your Software Engineer</h3>
+          <p>Custom apps, booking systems, invoicing platforms, CRM, staff scheduling — built to own, not to rent. No recurring SaaS fees for tools built specifically for your operation.</p>
+          <div class="arch-tag-row">
+            <span class="arch-tag">CRM</span>
+            <span class="arch-tag">Booking</span>
+            <span class="arch-tag">Invoicing</span>
+            <span class="arch-tag">Scheduling</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="arch-item arch-item--anchor reveal reveal-delay-4">
+        <span class="arch-num" aria-hidden="true">05</span>
+        <div class="arch-body">
+          <h3 class="arch-role">You Own Everything. Always.</h3>
+          <p>Your code, your domain, your data, your assets. Walk away at any time with everything intact. No exit fees, no proprietary lock-in, no platform holding your business hostage.</p>
+          <blockquote class="arch-promise">
+            "Your assets leave with you. That's not a selling point — it's how it should work."
+          </blockquote>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHO I WORK WITH — Section 03
+
+     LEAD GRAPHIC DESIGNER: 2-column editorial split replaces
+     the 3-column bento grid. Left: Service businesses. Right:
+     Creative professionals. Each column uses ruled-list items
+     rather than card boxes — the same open-air editorial
+     convention as the Architecture section.
+
+     UX PSYCHOLOGIST: The two-column split forces self-selection
+     before reading — "which side am I?" Belonging precedes
+     buying. The restaurant owner identifies with the left column
+     before engaging with any detail.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="section-who" style="background: var(--surface-1); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
   <div class="container">
-    <p class="section-label reveal">The Philosophy</p>
-    <h2 class="reveal reveal-delay-1">System Sovereignty.<br />Not subscription dependency.</h2>
-    <p class="lead reveal reveal-delay-2" style="margin-top: 1rem;">
-      Most "web guys" hand you a Squarespace login and disappear. I build infrastructure
-      you own - fast, secure, custom-coded - and stay available when it matters.
+
+    <div class="sec-row reveal">
+      <span class="sec-idx">03</span>
+      <span class="sec-lbl">Who I Work With</span>
+    </div>
+
+    <h2 class="reveal reveal-delay-1">
+      Two modes.<br>
+      <span class="serif-h">One standard of work.</span>
+    </h2>
+
+    <p class="section-lead reveal reveal-delay-2">
+      Operations-heavy businesses that need systems wired together, and creative professionals who need a presence that actually represents the work.
     </p>
 
-    <div class="feature-grid">
-      <div class="feature-item reveal">
-        <span class="feature-icon">⚡</span>
-        <h3>Lightning-Fast Static Sites</h3>
-        <p>Custom HTML/CSS hosted on GitHub Pages. No servers to hack, no monthly platform fees, no slowdowns.</p>
-      </div>
-      <div class="feature-item reveal reveal-delay-1">
-        <span class="feature-icon">🛒</span>
-        <h3>E-Commerce Without the Trap</h3>
-        <p>Bring retail to your custom site via the Shopify Buy Button - professional product flow without losing design control.</p>
-      </div>
-      <div class="feature-item reveal reveal-delay-2">
-        <span class="feature-icon">🔧</span>
-        <h3>Physical and Digital</h3>
-        <p>POS systems, kitchen printers, on-site wiring, hardware - I bridge the gap so you're never bouncing between vendors.</p>
-      </div>
-      <div class="feature-item reveal reveal-delay-1">
-        <span class="feature-icon">📞</span>
-        <h3>No Ticket Queue. Ever.</h3>
-        <p>When something breaks at 9pm on a Friday, you call me directly - not a support portal.</p>
-      </div>
-      <div class="feature-item reveal reveal-delay-2">
-        <span class="feature-icon">📅</span>
-        <h3>Batch Wednesday Workflow</h3>
-        <p>All client updates and audits happen every Wednesday - keeping systems tight and your day unbothered.</p>
-      </div>
-      <div class="feature-item reveal reveal-delay-3">
-        <span class="feature-icon">💰</span>
-        <h3>Low Overhead by Design</h3>
-        <p>Built to minimize what you pay monthly. Your operational independence is the goal, not your subscription dependency.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="who-split reveal reveal-delay-3">
 
-<!-- CREDENTIALS -->
-<section style="background: var(--bg); padding: 4rem 0;">
-  <div class="container">
-    <div class="glass-card reveal" style="padding: 2.5rem 3rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;">
-      <div>
-        <p class="section-label" style="margin-bottom: 0.5rem;">Credentials</p>
-        <h3 style="font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.3rem;">
-          Information Technology Specialist
-        </h3>
-        <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1.25rem;">
-          Certiport Certification &nbsp;·&nbsp; Francis Tuttle Technology Center
-        </p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-          <span style="background: rgba(254,92,0,0.08); border: 1px solid rgba(254,92,0,0.18); color: var(--accent); font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: 100px;">
-            2nd in Oklahoma - C# Programming
-          </span>
-          <span style="background: rgba(254,92,0,0.08); border: 1px solid rgba(254,92,0,0.18); color: var(--accent); font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: 100px;">
-            6th in Oklahoma - SQL Database Fundamentals
-          </span>
-          <span style="background: rgba(0,0,0,0.05); border: 1px solid var(--border); color: var(--muted); font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.85rem; border-radius: 100px;">
-            BPA Conference 2021
-          </span>
+      <div class="who-col">
+        <p class="who-col-label">Service &amp; Operations</p>
+        <div class="who-list">
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🍽️</span>
+            <div>
+              <h3>Restaurants &amp; Cafes</h3>
+              <p>Menu design, online ordering, delivery integration, Toast POS setup, tip pooling automation, reputation management, and print materials.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🛍️</span>
+            <div>
+              <h3>Retail &amp; Boutiques</h3>
+              <p>E-commerce integration, local SEO, and inventory-connected storefronts — no platform subscription.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🔩</span>
+            <div>
+              <h3>Home Services &amp; Trades</h3>
+              <p>Booking forms, service-area targeting, Google Business optimization, and review management.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🔭</span>
+            <div>
+              <h3>Field &amp; Specialty Services</h3>
+              <p>Technical field service businesses — sites and systems built for industries where the work itself is the credential.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="text-align: right; flex-shrink: 0;">
-        <p style="font-size: 0.72rem; color: var(--muted); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;">Issued by</p>
-        <p style="font-size: 0.9rem; font-weight: 700; color: var(--text); margin-top: 0.2rem;">Certiport</p>
-        <p style="font-size: 0.78rem; color: var(--muted);">Francis Tuttle TC</p>
+
+      <div class="who-col who-col--right">
+        <p class="who-col-label">Creative &amp; Portfolio</p>
+        <div class="who-list">
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🎵</span>
+            <div>
+              <h3>Musicians</h3>
+              <p>EPK sites, streaming setup, DistroKid/CD Baby accounts, Spotify for Artists, playlist pitching, and release strategy.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">📷</span>
+            <div>
+              <h3>Photographers &amp; Filmmakers</h3>
+              <p>Gallery layouts, reel embeds, client portals, and print-on-demand storefronts built for how your industry evaluates work.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">🎭</span>
+            <div>
+              <h3>Artists, Actors &amp; Writers</h3>
+              <p>Portfolio sites, byline archives, commission flows, and case study layouts structured for your specific industry.</p>
+            </div>
+          </div>
+          <div class="who-item">
+            <span class="who-icon" aria-hidden="true">📊</span>
+            <div>
+              <h3>Marketing Directors</h3>
+              <p>Content creation, campaign coordination, social strategy, and analytics infrastructure — built around your workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cred-strip reveal">
+      <div class="cred-badge">
+        <span class="cred-text">IT Specialist</span>
+        <span class="cred-label">Certiport · Francis Tuttle TC</span>
+      </div>
+      <div class="cred-divider" aria-hidden="true"></div>
+      <div class="cred-badge">
+        <span class="cred-rank">3+</span>
+        <span class="cred-label">Years · Independent Contractor</span>
+      </div>
+      <div class="cred-divider" aria-hidden="true"></div>
+      <div class="cred-badge">
+        <span class="cred-text">Toast POS</span>
+        <span class="cred-label">Real Restaurant · Operations Experience</span>
+      </div>
+      <div class="cred-divider" aria-hidden="true"></div>
+      <div class="cred-badge">
+        <span class="cred-text">$0/mo</span>
+        <span class="cred-label">Hosting · GitHub Pages + Fastly CDN</span>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- PITCH / STATS -->
-<section class="section-dark">
+
+<!-- ═══════════════════════════════════════════════════════════
+     WHY THIS WORKS — Section 04 / The Pitch
+     ═══════════════════════════════════════════════════════════ -->
+<section id="pitch">
   <div class="container">
-    <p class="section-label reveal">The Case for Getting This Right</p>
-    <h2 class="reveal reveal-delay-1">Your website is already costing you money.</h2>
-    <p class="lead reveal reveal-delay-2" style="margin-top: 0.75rem;">
-      Most local businesses treat their site as a formality. The data says it's actually a revenue lever.
+
+    <div class="reveal" style="max-width: 780px; margin-bottom: var(--s8); padding: var(--s5) var(--s6); background: var(--surface-2); border-left: 3px solid var(--gold);">
+      <p style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--s3);">The Pitch</p>
+      <p style="font-size: clamp(1rem, 2.6vw, 1.3rem); color: var(--ink); line-height: 1.72; font-style: italic;">"Local businesses are sold subscriptions, templates, and 'marketing packages' by people who've never run an operation. I build the actual infrastructure — websites, POS systems, booking tools, scheduling, automation — then stay on to manage it. One person. One number to call. You run your business."</p>
+      <p style="margin-top: var(--s4); font-size: 0.88rem; color: var(--ink-dim); line-height: 1.6;">From $50 flat to fully managed operations. Every deliverable owned by you, forever — no lock-in, no exit fees.</p>
+      <p style="margin-top: var(--s3); font-size: 0.78rem; color: var(--ink-dim);">— Ashton Stubblefield &nbsp;·&nbsp; Guthrie, OK &nbsp;·&nbsp; <a href="contact.html" style="color: var(--gold); text-decoration: none;">Book a free call →</a></p>
+    </div>
+
+    <div class="sec-row reveal">
+      <span class="sec-idx">04</span>
+      <span class="sec-lbl">Why This Works</span>
+    </div>
+
+    <h2 class="reveal reveal-delay-1">
+      Your digital presence is<br>
+      <span class="serif-h">your hardest-working employee.</span>
+    </h2>
+
+    <p class="section-lead reveal reveal-delay-2">
+      The goal is revenue — not rankings, not impressions. Every site I build is engineered to convert. Here's what the data says about why it matters.
     </p>
 
-    <div class="feature-grid" style="margin-top: 3.5rem; background: rgba(255,255,255,0.05);">
-
-      <div class="feature-item reveal" style="background: rgba(255,255,255,0.04);">
-        <span class="feature-icon" style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: inherit; letter-spacing: -0.04em;">76%</span>
-        <h3 style="color: var(--text-dark);">The First Impression Gap</h3>
-        <p style="color: var(--muted-dark);">
-          Of consumers search for a business website before visiting in person. If that site is slow or messy, you're not losing a click - you're losing a diner who is already hungry and ready to spend money.
-        </p>
-        <p style="font-size: 0.7rem; color: rgba(245,245,247,0.3); margin-top: 1rem; font-style: italic;">Source: REV Federal Credit Union, 2025</p>
-      </div>
-
-      <div class="feature-item reveal reveal-delay-1" style="background: rgba(255,255,255,0.04);">
-        <span class="feature-icon" style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: inherit; letter-spacing: -0.04em;">94%</span>
-        <h3 style="color: var(--text-dark);">The Credibility Tax</h3>
-        <p style="color: var(--muted-dark);">
-          Of people tie their first impression of your brand to your website's design. And 84% say a dedicated site makes a business more credible than one that only uses social media. A Facebook page is not a website.
-        </p>
-        <p style="font-size: 0.7rem; color: rgba(245,245,247,0.3); margin-top: 1rem; font-style: italic;">Source: Network Solutions / BusinessDasher, 2026</p>
-      </div>
-
-      <div class="feature-item reveal reveal-delay-2" style="background: rgba(255,255,255,0.04);">
-        <span class="feature-icon" style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: inherit; letter-spacing: -0.04em;">7%</span>
-        <h3 style="color: var(--text-dark);">The Speed-to-Sales Correlation</h3>
-        <p style="color: var(--muted-dark);">
-          Drop in conversions for every one-second delay in page load time. For every second your menu takes to load, you are driving customers directly to your competitors.
-        </p>
-        <p style="font-size: 0.7rem; color: rgba(245,245,247,0.3); margin-top: 1rem; font-style: italic;">Source: OuterBox / Deloitte, 2026</p>
-      </div>
-
-      <div class="feature-item reveal reveal-delay-1" style="background: rgba(255,255,255,0.04);">
-        <span class="feature-icon" style="font-size: 2rem; font-weight: 800; color: var(--accent); font-family: inherit; letter-spacing: -0.04em;">0.05s</span>
-        <h3 style="color: var(--text-dark);">The Snap-Judgment Reality</h3>
-        <p style="color: var(--muted-dark);">
-          That's how long users take to form an opinion about your site. If it doesn't look professional and load instantly, 38% of visitors will stop engaging and leave - immediately.
-        </p>
-        <p style="font-size: 0.7rem; color: rgba(245,245,247,0.3); margin-top: 1rem; font-style: italic;">Source: Sweor / Adobe, 2026</p>
-      </div>
-
-      <div class="feature-item reveal reveal-delay-2" style="grid-column: span 2; background: rgba(254,92,0,0.08); border-left: 2px solid var(--accent);">
-        <h3 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.75rem;">I don't just build nice-looking sites.</h3>
-        <p style="color: var(--muted-dark); font-size: 0.95rem; line-height: 1.75; max-width: 680px;">
-          I build high-conversion infrastructure that plugs these leaks. My goal is simple: when a customer searches for your business, they find a site that is fast, secure, and ready to turn them into a repeat regular.
-        </p>
-      </div>
-
+    <div class="data-grid" role="list" aria-label="Performance statistics">
+      <article class="data-card reveal" role="listitem">
+        <span class="data-num" data-target="76" data-suffix="%">76%</span>
+        <h3 class="data-title">The First Impression Gap</h3>
+        <p class="data-body">Of consumers search for a business website before visiting in person. A fast, polished site converts that search into a real visit.</p>
+        <span class="data-source">Source: REV Federal Credit Union, 2025</span>
+      </article>
+      <article class="data-card reveal reveal-delay-1" role="listitem">
+        <span class="data-num" data-target="94" data-suffix="%">94%</span>
+        <h3 class="data-title">The Credibility Tax</h3>
+        <p class="data-body">Of people tie their first impression of your brand to your website's design. A professional site is the highest-return legitimacy signal you can build.</p>
+        <span class="data-source">Source: Network Solutions / BusinessDasher, 2026</span>
+      </article>
+      <article class="data-card reveal reveal-delay-2" role="listitem">
+        <span class="data-num" data-target="39" data-suffix="%">39%</span>
+        <h3 class="data-title">The Revenue Gap</h3>
+        <p class="data-body">More revenue earned by businesses with a website vs. without. That gap grows as the digital landscape matures — capturing it now is a compounding advantage.</p>
+        <span class="data-source">Source: Deloitte / Google Connected Commerce Study</span>
+      </article>
+      <article class="data-card reveal reveal-delay-3" role="listitem">
+        <span class="data-num" data-target="57" data-suffix="%">57%</span>
+        <h3 class="data-title">The Abandonment Cliff</h3>
+        <p class="data-body">Of visitors abandon a site that takes longer than 3 seconds to load — they're gone before they read a word. Sites loading in 1 second achieve 40% conversion rates; at 3 seconds that drops to 29%. Businesses with slow sites lose an average of $20,172 per year directly to poor performance. Static sites sidestep this entirely.</p>
+        <span class="data-source">Sources: Portent research; 206-business performance survey, 2025</span>
+      </article>
     </div>
+
+    <div class="sec-row reveal" style="margin-top: var(--s7);">
+      <span class="sec-idx">—</span>
+      <span class="sec-lbl">The Cost of No Website</span>
+    </div>
+    <h2 class="reveal reveal-delay-1">Every competitor online is already in the room.</h2>
+    <p class="section-lead reveal reveal-delay-2">A strong web presence opens doors before you knock.</p>
+
+    <div class="data-grid" style="margin-top: var(--s4);" role="list">
+      <article class="data-card reveal" role="listitem">
+        <span class="data-num" data-target="29" data-suffix="%">29%</span>
+        <h3 class="data-title">A Wide-Open Opportunity</h3>
+        <p class="data-body">Nearly 1 in 3 small businesses have no website — in a market where 97% of consumers search online before visiting. Getting online well is one of the fastest ways to stand out.</p>
+        <span class="data-source">Source: Clutch Small Business Survey, 2024</span>
+      </article>
+      <article class="data-card reveal reveal-delay-1" role="listitem">
+        <span class="data-num" data-target="2.8" data-suffix="×">2.8×</span>
+        <h3 class="data-title">The Growth Multiplier</h3>
+        <p class="data-body">Businesses with websites are 2.8 times more likely to grow revenues than those without — not a percentage point advantage, a structural one. Drawn from a Google/Deloitte study of over 4,500 small businesses.</p>
+        <span class="data-source">Source: Google / Deloitte Connected Commerce Study</span>
+      </article>
+      <article class="data-card reveal reveal-delay-2" role="listitem">
+        <span class="data-num" data-target="35" data-suffix="%">35%</span>
+        <h3 class="data-title">The Credibility Floor</h3>
+        <p class="data-body">Only 35% of consumers would even consider doing business with a company that has no website — meaning 65% have already ruled you out before a word is exchanged. Separately, 84% say a website makes a business more credible than social media alone.</p>
+        <span class="data-source">Sources: DreamHost Local Business Trust Index, 2026; Network Solutions, 2025</span>
+      </article>
+    </div>
+
+    <div class="sec-row reveal" style="margin-top: var(--s7);">
+      <span class="sec-idx">—</span>
+      <span class="sec-lbl">Why Not Just Use...</span>
+    </div>
+    <h2 class="reveal reveal-delay-1">The honest comparison.</h2>
+
+    <div class="compare-grid" role="list" aria-label="Competitive comparison">
+      <article class="compare-card reveal" role="listitem">
+        <p class="compare-vs">vs. GoDaddy / Squarespace</p>
+        <h3>You're renting a tool. Not getting a person.</h3>
+        <p>Squarespace charges $16–$49/mo for a template you maintain yourself. You get a custom-coded site, $0/mo hosting, and someone who actually updates it — for the same price or less.</p>
+      </article>
+      <article class="compare-card reveal reveal-delay-1" role="listitem">
+        <p class="compare-vs">vs. a Marketing Agency</p>
+        <h3>$3,000 to build. $300/mo to maintain. Then silence.</h3>
+        <p>Agencies charge $150–$300/hr and hand you a finished product before disappearing into a support queue. You get the same quality work, a flat monthly rate, and direct access to the person who built it — permanently.</p>
+      </article>
+      <article class="compare-card reveal reveal-delay-2" role="listitem">
+        <p class="compare-vs">vs. Scorpion, Thryv, or similar platforms</p>
+        <h3>Your assets live in their system. You can't leave.</h3>
+        <p>Marketing platforms charge $500–$3,000/mo and build everything on their proprietary infrastructure. Walking away means starting from zero. Here, you own the code, the domain, and every asset — always.</p>
+      </article>
+      <article class="compare-card reveal reveal-delay-3" role="listitem">
+        <p class="compare-vs">vs. Hiring In-House</p>
+        <h3>A junior developer alone costs $40,000+/yr.</h3>
+        <p>That's one person, one skill set. For a fraction of that cost, you get a web developer, IT director, marketing coordinator, and software engineer — all in one retainer, available 24/7.</p>
+      </article>
+    </div>
+
+    <div class="sec-row reveal" style="margin-top: var(--s7);">
+      <span class="sec-idx">—</span>
+      <span class="sec-lbl">The Price Gap, In Numbers</span>
+    </div>
+    <h2 class="reveal reveal-delay-1">What the market charges for the same scope.</h2>
+    <p class="section-lead reveal reveal-delay-2">Not estimated savings — actual current rates from freelancers, agencies, and the SaaS platforms that each do one of these things instead of all of them.</p>
+
+    <div class="data-grid" role="list">
+      <article class="data-card reveal" role="listitem">
+        <span class="data-num" data-target="70" data-suffix="%">70%</span>
+        <h3 class="data-title">Average Below Market — Across All Tiers</h3>
+        <p class="data-body">A marketing coordinator costs $50,751/year nationally. Managed IT for 10 employees runs $1,000–3,000/mo. A freelance web developer runs $60,000+/year. That's one skill each, billed separately, with three support queues. Every tier here covers all three — 57–97% below what assembling that separately would cost.</p>
+        <span class="data-source">Sources: ZipRecruiter 2026; IT pricing guides 2025; Upwork market rates</span>
+      </article>
+      <article class="data-card reveal reveal-delay-1" role="listitem">
+        <span class="data-num" data-target="90" data-suffix="%">90%</span>
+        <h3 class="data-title">Below Market at the Business Tier</h3>
+        <p class="data-body">Social media management + web &amp; IT + POS support + business software = $1,000–2,600/mo across separate vendors. Business tier: $400/mo.</p>
+        <span class="data-source">vs. regional freelancer and SaaS subscription market rates, 2025</span>
+      </article>
+      <article class="data-card reveal reveal-delay-2" role="listitem">
+        <span class="data-num" data-target="95" data-suffix="%">95%</span>
+        <h3 class="data-title">Below Agency Rate for Custom Software</h3>
+        <p class="data-body">The average small business website build costs $4,500–6,000 from a freelancer, $10,000–35,000 from an agency — before ongoing maintenance at $200–500/mo. Custom booking systems and integrations start at $75 here. Same code. Full ownership. No recurring agency retainer to maintain something you already paid for.</p>
+        <span class="data-source">Sources: Upwork / agency development rates 2025; website cost guides 2025–2026</span>
+      </article>
+      <article class="data-card reveal reveal-delay-3" role="listitem">
+        <span class="data-num" data-prefix="$" data-target="0">$0</span>
+        <h3 class="data-title">Monthly Hosting — and Faster Too</h3>
+        <p class="data-body">Squarespace charges $23–49/mo for a template you update yourself. Wix charges $17–159/mo. Beyond the cost: Squarespace pages average 3.6s LCP and score 30/100 on Mobile PageSpeed. Wix averages 6.8s LCP. A custom-coded static site on GitHub Pages routinely delivers under 1s LCP — <strong style="color: var(--ink);">up to 72% faster than Squarespace and up to 85% faster than Wix</strong> — at $0/mo hosting.</p>
+        <span class="data-source">LCP benchmark: makingthatwebsite.com, Squarespace vs Wix 2026; PageSpeed score: pandacodegen.com, 2026</span>
+      </article>
+    </div>
+
+      <article class="compare-card reveal reveal-delay-4" role="listitem">
+        <p class="compare-vs">vs. DoorDash Marketplace</p>
+        <h3>DoorDash's network. Zero commission.</h3>
+        <p>DoorDash's standard marketplace takes 15–30% per order — often more than a restaurant's entire profit margin. The alternative: DoorDash Drive through Toast. Customers order directly from your site, DoorDash drivers pick up from your shelf, and you keep 100% of food revenue. Same driver network. Zero platform cut. We handle the whole setup.</p>
+      </article>
+    </div>
+
   </div>
 </section>
 
-<!-- TIERS -->
-<section class="section-dark" style="padding-top: 0;">
-  <div class="container" style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 6rem;">
-    <p class="section-label reveal">Service Tiers</p>
-    <h2 class="reveal reveal-delay-1">Pick your level of support.</h2>
-    <p class="lead reveal reveal-delay-2" style="margin-top: 0.75rem;">Three tiers built around where your business actually is.</p>
 
-    <div class="tiers-grid">
+<!-- ═══════════════════════════════════════════════════════════
+     SERVICE TIERS — Section 05
+     ═══════════════════════════════════════════════════════════ -->
+<section style="background: var(--surface-1); border-top: 1px solid var(--line);">
+  <div class="container">
 
-      <div class="tier-card reveal">
-        <div class="tier-name">Foundation</div>
+    <div class="sec-row reveal">
+      <span class="sec-idx">05</span>
+      <span class="sec-lbl">Service Tiers</span>
+    </div>
+
+    <h2 class="reveal reveal-delay-1">
+      Fully managed.<br>
+      <span class="serif-h">You run your business.</span>
+    </h2>
+
+    <p class="section-lead reveal reveal-delay-2">Eight tiers, one philosophy — price it so any local business can actually say yes. Every deliverable is yours to keep, forever.</p>
+
+    <div class="tiers-grid" role="list">
+
+      <article class="tier-card reveal" role="listitem">
+        <p class="tier-name">Launch</p>
         <div class="tier-price">
-          <span class="amount">$100</span>
-          <span class="period">/mo</span>
+          <span class="amount">$50</span>
+          <span class="period">flat</span>
         </div>
-        <div class="tier-setup">+ $300 one-time setup</div>
+        <p class="tier-setup">One-time. No recurring fee.</p>
         <hr class="tier-divider" />
         <ul class="tier-features">
-          <li>Weekly maintenance and audits</li>
-          <li>24/7 emergency support</li>
-          <li>Security monitoring</li>
           <li>Custom-coded static website</li>
-          <li>$0/mo hosting</li>
-          <li>Google Business setup and optimization</li>
+          <li>GitHub Pages hosting setup</li>
+          <li>DNS configuration</li>
+          <li>Full ownership &amp; credentials handed over</li>
+          <li>No maintenance or updates included</li>
         </ul>
         <a href="contact.html" class="tier-cta">Get Started</a>
-      </div>
+      </article>
 
-      <div class="tier-card featured reveal reveal-delay-1">
-        <div class="tier-badge">Most Popular</div>
-        <div class="tier-name">Growth</div>
+      <article class="tier-card reveal reveal-delay-1" role="listitem">
+        <p class="tier-name">Foundation</p>
+        <div class="tier-price">
+          <span class="amount">$50</span>
+          <span class="period">/mo</span>
+        </div>
+        <p class="tier-setup">+ $300 one-time setup</p>
+        <hr class="tier-divider" />
+        <ul class="tier-features">
+          <li>Custom-coded static website</li>
+          <li>$0/mo hosting via GitHub Pages</li>
+          <li>Domain registration &amp; DNS</li>
+          <li>Google Business profile setup</li>
+          <li>Weekly maintenance &amp; updates</li>
+          <li>Security monitoring</li>
+          <li>24/7 response</li>
+        </ul>
+        <a href="contact.html" class="tier-cta">Get Started</a>
+      </article>
+
+      <article class="tier-card featured reveal reveal-delay-2" role="listitem">
+        <span class="tier-badge">Most Popular</span>
+        <p class="tier-name">Operations</p>
         <div class="tier-price">
           <span class="amount">$150</span>
           <span class="period">/mo</span>
         </div>
-        <div class="tier-setup">+ $500 one-time setup</div>
+        <p class="tier-setup">+ $900 one-time setup</p>
         <hr class="tier-divider" />
         <ul class="tier-features">
-          <li>Everything in Foundation</li>
-          <li>POS-to-delivery automation</li>
-          <li>Staff management integration</li>
-          <li>Scheduling and messaging</li>
-          <li>Digital onboarding</li>
+          <li>Everything in Foundation–Brand</li>
+          <li>Full SEO &amp; directory setup</li>
+          <li>Logo, branding &amp; print design</li>
+          <li>Toast POS setup &amp; API sync</li>
+          <li>Tip pooling automation</li>
+          <li>Staff scheduling &amp; messaging</li>
+          <li>Hiring &amp; digital onboarding</li>
         </ul>
         <a href="contact.html" class="tier-cta">Get Started</a>
-      </div>
+      </article>
 
-      <div class="tier-card reveal reveal-delay-2">
-        <div class="tier-name">Sovereign</div>
+      <article class="tier-card reveal reveal-delay-3" role="listitem">
+        <p class="tier-name">Enterprise</p>
         <div class="tier-price">
-          <span class="amount">$250</span>
-          <span class="period">/mo</span>
+          <span class="amount" style="font-size:2.5rem;">Quote</span>
         </div>
-        <div class="tier-setup">+ $850 one-time setup</div>
+        <p class="tier-setup">+ Quote (min. $2,500 deposit)</p>
         <hr class="tier-divider" />
         <ul class="tier-features">
-          <li>Everything in Growth</li>
-          <li>Growth strategy and consulting</li>
-          <li>Professional photography</li>
-          <li>Branding and menu design</li>
-          <li>Merchandise launch</li>
+          <li>Everything across all tiers</li>
+          <li>Custom app development</li>
+          <li>App store publishing</li>
+          <li>Software distribution</li>
+          <li>API &amp; integration layer</li>
         </ul>
-        <a href="contact.html" class="tier-cta">Get Started</a>
-      </div>
+        <a href="contact.html" class="tier-cta">Get a Quote</a>
+      </article>
 
     </div>
 
-    <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
-      <a href="services.html" class="btn btn-ghost" style="color: var(--text-dark); background: rgba(255,255,255,0.08);">
-        See Full Pricing + A La Carte Modules
-      </a>
+    <div style="text-align: center; margin-top: var(--s4);" class="reveal">
+      <a href="services.html" class="btn btn-ghost">See All 8 Tiers + A La Carte Modules →</a>
     </div>
+
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-band">
-  <div class="container" style="text-align: center; max-width: 580px; margin: 0 auto;">
-    <p class="section-label reveal">Ready to start?</p>
-    <h2 class="reveal reveal-delay-1">Let's talk about your operation.</h2>
-    <p class="lead reveal reveal-delay-2" style="margin: 1rem auto 2.5rem; text-align: center;">
-      Free 30-minute consultation. No pitch deck. Just an honest look at what your business needs.
+
+<!-- ═══════════════════════════════════════════════════════════
+     CLOSING CTA
+     ═══════════════════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <p class="cta-label reveal">Ready to start?</p>
+    <h2 class="cta-h2 reveal reveal-delay-1">
+      Let's talk about<br>
+      <em>your operation.</em>
+    </h2>
+    <p class="cta-lead reveal reveal-delay-2">
+      Free 30-minute call. No pitch deck. Just an honest look at what your business needs and what it would take to build it right.
     </p>
-    <div class="reveal reveal-delay-3">
-      <a href="contact.html" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 2.25rem;">
-        Book Your Free Call
-      </a>
-    </div>
+    <a href="contact.html" class="btn btn-fire btn-lg reveal reveal-delay-3">Book Your Free Call</a>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Ashton Stubblefield</span>
-    <p>© 2026 Ashton Stubblefield - Guthrie, OK</p>
-    <div class="footer-links">
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://www.linkedin.com/in/ashton-stubblefield-0963243a4/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="index.html" class="nav-logo" aria-label="Ashton Stubblefield — Home">
+      <img src="Images/Logo.png" alt="" role="presentation" class="nav-logo-img" />
+    </a>
+    <p>© 2026 Ashton Stubblefield — Guthrie, OK</p>
+    <div class="footer-links" role="list" aria-label="Footer navigation">
+      <a href="services.html" role="listitem">Services</a>
+      <a href="portfolio.html" role="listitem">Portfolio</a>
+      <a href="contact.html" role="listitem">Contact</a>
+      <a href="https://www.linkedin.com/in/ashton-stubblefield-0963243a4/" target="_blank" rel="noopener" role="listitem">LinkedIn</a>
+    </div>
+    <div class="footer-links" role="list" aria-label="Industry pages" style="margin-top: 0.75rem; opacity: 0.6;">
+      <a href="restaurants.html" role="listitem">For Restaurants</a>
+      <a href="trades.html" role="listitem">For Trades</a>
+      <a href="creatives.html" role="listitem">For Creatives</a>
     </div>
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/effects.js"></script>
 
 </body>
 </html>

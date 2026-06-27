@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashton Stubblefield - Resume</title>
+  <title>Ashton Stubblefield — Operational Architect</title>
+  <meta name="description" content="Capability brief for Ashton Stubblefield — web, IT, POS, and operations for local businesses in Guthrie, OK." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -26,8 +29,7 @@
       padding: 0.65in 0.7in;
     }
 
-    /* HEADER */
-    .header { margin-bottom: 0.22in; }
+    .header { margin-bottom: 0.18in; }
 
     h1 {
       font-size: 20pt;
@@ -35,7 +37,15 @@
       letter-spacing: -0.02em;
       color: #111;
       line-height: 1;
-      margin-bottom: 0.06in;
+      margin-bottom: 0.04in;
+    }
+
+    .header-sub {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #FE5C00;
+      margin-bottom: 0.07in;
+      letter-spacing: 0.02em;
     }
 
     .contact-line {
@@ -48,7 +58,6 @@
 
     .contact-line a { color: #555; text-decoration: none; }
 
-    /* DIVIDER */
     hr {
       border: none;
       border-top: 1.5px solid #FE5C00;
@@ -60,7 +69,6 @@
       margin: 0.12in 0;
     }
 
-    /* SECTION */
     .section { margin-bottom: 0.18in; }
 
     .section-title {
@@ -72,7 +80,12 @@
       margin-bottom: 0.1in;
     }
 
-    /* EXPERIENCE */
+    p {
+      font-size: 9pt;
+      color: #444;
+      line-height: 1.65;
+    }
+
     .job { margin-bottom: 0.14in; }
     .job:last-child { margin-bottom: 0; }
 
@@ -102,6 +115,13 @@
       margin-bottom: 0.06in;
     }
 
+    .job-note {
+      font-size: 8pt;
+      color: #888;
+      font-style: italic;
+      margin-top: 0.04in;
+    }
+
     ul {
       list-style: none;
       display: flex;
@@ -124,7 +144,6 @@
       color: #bbb;
     }
 
-    /* EDUCATION */
     .edu-item {
       display: flex;
       justify-content: space-between;
@@ -135,8 +154,6 @@
     }
 
     .edu-item:last-child { margin-bottom: 0; }
-
-    .edu-left {}
 
     .edu-degree {
       font-size: 9.5pt;
@@ -149,19 +166,6 @@
       color: #555;
     }
 
-    .edu-note {
-      font-size: 8pt;
-      color: #777;
-      margin-top: 0.02in;
-    }
-
-    .edu-right {
-      font-size: 8.5pt;
-      color: #777;
-      white-space: nowrap;
-    }
-
-    /* SKILLS */
     .skills-row {
       display: flex;
       gap: 0.1in;
@@ -182,6 +186,28 @@
       color: #555;
     }
 
+    .capability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.08in 0.2in;
+      margin-top: 0.04in;
+    }
+
+    .capability-item {
+      font-size: 8.5pt;
+      color: #444;
+      padding-left: 0.1in;
+      position: relative;
+    }
+
+    .capability-item::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #FE5C00;
+      font-size: 7pt;
+    }
+
     @media print {
       body { background: white; }
       .page { padding: 0.6in 0.65in; }
@@ -194,6 +220,7 @@
 
   <div class="header">
     <h1>Ashton Stubblefield</h1>
+    <div class="header-sub">Operational Architect — Web · IT · POS & Systems · Marketing</div>
     <div class="contact-line">
       <span>Guthrie, OK</span>
       <span>405.712.8959</span>
@@ -206,46 +233,55 @@
   <hr />
 
   <div class="section">
-    <div class="section-title">Summary</div>
-    <p style="font-size: 9pt; color: #444; line-height: 1.65;">
-      Dedicated Operational Architect and software developer with a six-year background in building custom digital solutions for local businesses and high-level professionals. I bridge the gap between complex back-end infrastructure and high-touch human services - balancing technical precision with a trauma-informed perspective to deliver bespoke digital systems that prioritize efficiency, stability, and growth. Earned an IT Specialist certification at Francis Tuttle Technology Center and ranked 2nd in Oklahoma for C# Programming. Currently providing tailored web architecture under independent contract while pursuing dual degrees in Psychology and Crime Victim Advocacy at OSU-OKC.
+    <div class="section-title">What I Do</div>
+    <p>
+      I design and manage the complete digital operation for local businesses — custom websites, POS systems, booking and scheduling tools, staff automation, and 24/7 technical support — under one flat monthly rate. Clients get a single point of contact who built their system and knows it inside out. No ticket queues, no agency handoffs, no platform lock-in. Every deliverable is owned outright, always.
     </p>
   </div>
 
   <hr class="light" />
 
   <div class="section">
-    <div class="section-title">Core Competencies</div>
+    <div class="section-title">What I Build</div>
     <div class="skills-row">
-      <div class="skills-label">Systems &amp; Dev</div>
-      <div class="skills-list">Systems Engineering &nbsp;·&nbsp; Process Automation &nbsp;·&nbsp; UI/UX Strategy &nbsp;·&nbsp; Technical Documentation &nbsp;·&nbsp; Crisis Management</div>
+      <div class="skills-label">Web & Digital</div>
+      <div class="skills-list">Custom-coded static sites &nbsp;·&nbsp; GitHub Pages hosting ($0/mo) &nbsp;·&nbsp; SEO &nbsp;·&nbsp; Google Business &nbsp;·&nbsp; Domain & DNS management</div>
     </div>
     <div class="skills-row" style="margin-top: 0.04in;">
-      <div class="skills-label">Technical Stack</div>
-      <div class="skills-list">Linux (System Admin / Bash) &nbsp;·&nbsp; HTML5 / CSS3 &nbsp;·&nbsp; SQL &nbsp;·&nbsp; C# &nbsp;·&nbsp; Git &nbsp;·&nbsp; Adobe Creative Suite &nbsp;·&nbsp; Toast POS &nbsp;·&nbsp; Shopify</div>
+      <div class="skills-label">Restaurant Ops</div>
+      <div class="skills-list">Toast POS setup & configuration &nbsp;·&nbsp; DoorDash Drive integration &nbsp;·&nbsp; Tip pooling automation &nbsp;·&nbsp; Online ordering &nbsp;·&nbsp; Staff scheduling</div>
     </div>
     <div class="skills-row" style="margin-top: 0.04in;">
-      <div class="skills-label">Human Services</div>
-      <div class="skills-list">Trauma-Informed Care &nbsp;·&nbsp; Crisis Intervention &nbsp;·&nbsp; Healthcare Administration &nbsp;·&nbsp; Clinical Support &nbsp;·&nbsp; Operational Efficiency</div>
+      <div class="skills-label">Systems</div>
+      <div class="skills-list">Booking & appointment systems &nbsp;·&nbsp; Invoicing tools &nbsp;·&nbsp; Client portals &nbsp;·&nbsp; Custom software &nbsp;·&nbsp; API integrations &nbsp;·&nbsp; Shopify</div>
+    </div>
+    <div class="skills-row" style="margin-top: 0.04in;">
+      <div class="skills-label">Creative</div>
+      <div class="skills-list">Adobe Creative Suite &nbsp;·&nbsp; Logo & branding &nbsp;·&nbsp; Print materials &nbsp;·&nbsp; Photography direction &nbsp;·&nbsp; Social content calendars</div>
+    </div>
+    <div class="skills-row" style="margin-top: 0.04in;">
+      <div class="skills-label">Infrastructure</div>
+      <div class="skills-list">Linux / Bash &nbsp;·&nbsp; SQL &nbsp;·&nbsp; C# &nbsp;·&nbsp; Git &nbsp;·&nbsp; HTML5 / CSS3 / JavaScript &nbsp;·&nbsp; Security monitoring &nbsp;·&nbsp; Technical documentation</div>
     </div>
   </div>
 
   <hr class="light" />
 
   <div class="section">
-    <div class="section-title">Experience</div>
+    <div class="section-title">Operational Experience</div>
 
     <div class="job">
       <div class="job-header">
-        <div class="job-title">Software Developer</div>
-        <div class="job-dates">January 2023 - Present</div>
+        <div class="job-title">Operational Architect — Independent Contractor</div>
+        <div class="job-dates">January 2023 – Present</div>
       </div>
-      <div class="job-company">Independent Contractor</div>
+      <div class="job-company">ashstu.codes &nbsp;·&nbsp; Guthrie, Oklahoma</div>
       <ul>
-        <li>Architected and deployed custom, high-performance web ecosystems for local enterprises, significantly reducing administrative overhead and increasing digital conversion rates.</li>
-        <li>Leveraged data-driven UI/UX design to enhance customer engagement, consistently increasing digital reach through optimized, SEO-friendly, and mobile-responsive architecture.</li>
-        <li>Manage the full development lifecycle from initial design in Adobe Suite to technical implementation, 24/7 emergency support, and weekly system audits under recurring service contracts.</li>
-        <li>Deliver bespoke digital infrastructure prioritizing speed, security, and zero-downtime operational uptime for client businesses.</li>
+        <li>Design and deploy custom web and operations systems for local restaurants, service businesses, retail shops, and creative professionals under recurring managed contracts</li>
+        <li>Specialize in static-site architecture delivering sub-1s page load times and $0/mo hosting — up to 85% faster than Wix, 72% faster than Squarespace, at zero ongoing hosting cost</li>
+        <li>Manage the full scope of each client's digital operation: website, SEO, Google Business, POS configuration, scheduling, staff automation, and 24/7 technical support — one rate, one contact</li>
+        <li>Handle the complete delivery lifecycle from design in Adobe Suite to production deployment, DNS setup, Formspree integrations, and weekly system audits</li>
+        <li>Clients retain full ownership of all code, domain, data, and assets — no exit fees, no proprietary lock-in</li>
       </ul>
     </div>
 
@@ -253,23 +289,30 @@
 
     <div class="job">
       <div class="job-header">
-        <div class="job-title">Front of House Specialist &amp; Expo</div>
-        <div class="job-dates">November 2023 - July 2025</div>
+        <div class="job-title">Restaurant Operations & POS Lead</div>
+        <div class="job-dates">November 2023 – July 2025</div>
       </div>
-      <div class="job-company">Waffle Champion</div>
+      <div class="job-company">Waffle Champion &nbsp;·&nbsp; Oklahoma City, OK</div>
       <ul>
-        <li>Served as on-site Technical Lead for POS stability, resolving critical system bottlenecks in high-volume environments to ensure zero-downtime service.</li>
-        <li>Mastered the Toast POS interface for high-volume digital systems management and precise financial data entry.</li>
-        <li>Maintained operational uptime by troubleshooting hardware and software issues under pressure.</li>
-        <li>Acted as a central communication hub between back-end production and front-end delivery to ensure seamless workflow.</li>
+        <li>Embedded within a high-volume restaurant operation to develop first-hand expertise with Toast POS under real service conditions — tip pooling, drawer management, and peak-hour system stability</li>
+        <li>Served as on-site technical lead for all POS hardware and software issues, maintaining zero-downtime uptime during service</li>
+        <li>Acted as the operational link between back-of-house production and front-of-house delivery, identifying and resolving workflow bottlenecks in real time</li>
       </ul>
+      <p class="job-note">This embedded experience directly informs the restaurant services tier — systems built for clients reflect the operational reality of working inside one.</p>
     </div>
   </div>
 
   <hr class="light" />
 
   <div class="section">
-    <div class="section-title">Education</div>
+    <div class="section-title">Credentials</div>
+
+    <div class="edu-item">
+      <div class="edu-left">
+        <div class="edu-degree">IT Specialist Certification</div>
+        <div class="edu-school">Certiport &nbsp;·&nbsp; Francis Tuttle Technology Center</div>
+      </div>
+    </div>
 
     <div class="edu-item">
       <div class="edu-left">
@@ -285,22 +328,7 @@
       </div>
     </div>
 
-    <div class="edu-item">
-      <div class="edu-left">
-        <div class="edu-degree">Information Technology Specialist - Certiport Certification</div>
-        <div class="edu-school">Francis Tuttle Technology Center</div>
-        <div class="edu-note">BPA Conference 2021 - 2nd in Oklahoma, C# Programming &nbsp;·&nbsp; 6th in Oklahoma, SQL Database Fundamentals</div>
-      </div>
-    </div>
-
-    <div class="edu-item">
-      <div class="edu-left">
-        <div class="edu-degree">High School Diploma</div>
-        <div class="edu-school">Edmond North High School - Top 4% of U.S. public high schools nationally</div>
-      </div>
-    </div>
   </div>
-
 
 </div>
 </body>

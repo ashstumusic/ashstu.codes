@@ -1,31 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Ashton Stubblefield</title>
   <meta name="description" content="Real work for real Guthrie businesses. Custom websites, POS integrations, branding, and more." />
   <link rel="canonical" href="https://ashstu.codes/portfolio.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@300..800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="scroll-bar" id="scroll-bar"></div>
+
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">Ashton Stubblefield</a>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#pitch">The Pitch</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="cv.html" target="_blank">Resume</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cv.html" target="_blank">Credentials</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="index.html#pitch">The Pitch</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="cv.html" target="_blank">Credentials</a>
+  <a href="contact.html" class="nav-cta">Get in Touch</a>
+</div>
+
+<main id="main-content">
 
 <div class="page-hero">
   <div class="container">
@@ -54,45 +78,13 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal reveal-delay-1">
-        <div class="portfolio-thumb">
-          <span>Screenshot coming soon</span>
-        </div>
-        <div class="portfolio-info">
-          <h3>Mia Baker</h3>
-          <p>Portfolio site for a visual artist. Custom-coded and designed to showcase creative work.</p>
-          <div class="portfolio-tags">
-            <span class="tag">Static Site</span>
-            <span class="tag">Portfolio</span>
-            <span class="tag">Artist</span>
-          </div>
-          <a href="https://miabakerportfolio.art/" target="_blank" rel="noopener" class="portfolio-link">View Site →</a>
-        </div>
-      </div>
-
-      <div class="portfolio-card reveal reveal-delay-2">
-        <div class="portfolio-thumb">
-          <span>Screenshot coming soon</span>
-        </div>
-        <div class="portfolio-info">
-          <h3>Autumn Child</h3>
-          <p>Band website for a local music act. Built for performance, bookings, and discovery.</p>
-          <div class="portfolio-tags">
-            <span class="tag">Static Site</span>
-            <span class="tag">Music</span>
-            <span class="tag">Band</span>
-          </div>
-          <a href="https://autumnchild.band/" target="_blank" rel="noopener" class="portfolio-link">View Site →</a>
-        </div>
-      </div>
-
       <div class="portfolio-card reveal">
         <div class="portfolio-thumb">
           <span>Screenshot coming soon</span>
         </div>
         <div class="portfolio-info">
           <h3>Ash Stu Media</h3>
-          <p>Personal media hub for photography, videography, and content production.</p>
+          <p>Ashton's own artist site and press kit. Streaming links, videos, and downloadable EPK for booking and press.</p>
           <div class="portfolio-tags">
             <span class="tag">Static Site</span>
             <span class="tag">Media</span>
@@ -108,7 +100,7 @@
         </div>
         <div class="portfolio-info">
           <h3>Ultra View Drone Services</h3>
-          <p>Service site for a drone recovery and aerial photography operation.</p>
+          <p>Custom website for a drone recovery and aerial photography business. Fast, fully owned, no monthly platform fee.</p>
           <div class="portfolio-tags">
             <span class="tag">Static Site</span>
             <span class="tag">Drone</span>
@@ -134,9 +126,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo">Ashton Stubblefield</span>
+    <a href="index.html" class="nav-logo"><img src="Images/Logo.png" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
     <p>© 2026 Ashton Stubblefield - Guthrie, OK</p>
     <div class="footer-links">
       <a href="services.html">Services</a>
@@ -147,12 +141,7 @@
   </div>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+<script src="assets/js/effects.js"></script>
 
 </body>
 </html>
