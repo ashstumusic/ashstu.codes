@@ -9,26 +9,26 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ── Surface layers — blue-black tint adds depth vs. warm black ── */
-  --bg:        #07060A;
-  --surface-1: #0F0E12;
-  --surface-2: #17161B;
-  --surface-3: #1F1E24;
+  /* ── Surface layers — violet-black adds depth vs. neutral black ── */
+  --bg:        #060509;
+  --surface-1: #0D0C11;
+  --surface-2: #141218;
+  --surface-3: #1C1A22;
 
   /* ── Ink — warmer cream, more inviting than pure white ── */
-  --ink:       #EDE8E0;
-  --ink-dim:   rgba(237, 232, 224, 0.46);
-  --ink-faint: rgba(237, 232, 224, 0.07);
+  --ink:       #F2ECE2;
+  --ink-dim:   rgba(242, 236, 226, 0.44);
+  --ink-faint: rgba(242, 236, 226, 0.06);
 
-  /* ── Gold — richer, more saturated. Holds against the deeper bg ── */
-  --gold:        #C99B2A;
-  --gold-dim:    rgba(201, 155, 42, 0.10);
-  --gold-border: rgba(201, 155, 42, 0.26);
-  --gold-strong: rgba(201, 155, 42, 0.50);
+  /* ── Gold — luminous amber. More saturated, more precious. ── */
+  --gold:        #D4A843;
+  --gold-dim:    rgba(212, 168, 67, 0.09);
+  --gold-border: rgba(212, 168, 67, 0.24);
+  --gold-strong: rgba(212, 168, 67, 0.48);
 
-  /* ── Fire — CTA only. Slightly crimson-shifted for contrast ── */
-  --fire:     #D93B0A;
-  --fire-dim: rgba(217, 59, 10, 0.10);
+  /* ── Fire — crimson-shifted. Authoritative, not startup orange. ── */
+  --fire:     #C63B12;
+  --fire-dim: rgba(198, 59, 18, 0.10);
 
   /* ── Structural lines ── */
   --line:     rgba(244, 241, 234, 0.08);
@@ -52,13 +52,13 @@
   --spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* ── Max width ── */
-  --max: 1140px;
+  --max: 1200px;
 
   /* ── Kinetic: written by effects.js ── */
   --scroll-weight: 700; /* variable font weight on scroll position */
 
   /* ── Backward-compat aliases (inline styles on other pages) ── */
-  --accent:       #C99B2A;
+  --accent:       #D4A843;
   --bg-dark:      #07060A;
   --bg-ink:       #07060A;
   --bg-dark-alt:  #0F0E12;
@@ -1906,4 +1906,356 @@ footer p { font-size: 0.72rem; color: var(--ink-dim); font-family: var(--sans); 
 
   /* Ledger goes full-width single column */
   .ledger-item { min-width: 100%; }
+}
+
+
+/* ================================================================
+   "THE DOSSIER" — DESIGN OVERHAUL COMPONENTS
+   New classes appended. Existing classes above are unchanged.
+   Color tokens in :root updated to new palette (D4A843 gold,
+   C63B12 fire, 060509 bg). All other pages use these tokens
+   so the palette update propagates site-wide automatically.
+   ================================================================ */
+
+/* ── NAV SCROLLED STATE ──────────────────────────────────────── */
+/* JS adds .scrolled after 20px scroll — blur activates then only */
+body > nav.scrolled {
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  background: rgba(6, 5, 9, 0.86);
+}
+
+/* ── BG GRID — blueprint dot texture in hero ─────────────────── */
+/* Dots register subliminally as "precision" before conscious read */
+/* Mask fades the grid to nothing outside the hero focal zone.    */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(212,168,67,0.11) 1px, transparent 1px);
+  background-size: 38px 38px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 25%, black 15%, transparent 75%);
+  mask-image: radial-gradient(ellipse 90% 85% at 50% 25%, black 15%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── V-PROGRESS — side chapter indicator ─────────────────────── */
+/* Fixed left-edge element updates as user scrolls through sections.
+   Adds editorial gravitas — feels like reading a structured document.
+   Hidden below 1100px where it would crowd the layout.           */
+.v-progress {
+  position: fixed;
+  left: 1.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  pointer-events: none;
+}
+.v-progress-num {
+  writing-mode: vertical-rl;
+  font-family: var(--sans);
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  opacity: 0.45;
+  transform: rotate(180deg);
+}
+.v-progress-track {
+  width: 1px;
+  height: 52px;
+  background: var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.v-progress-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--gold);
+  transition: height 0.65s var(--ease-out);
+  height: 0%;
+}
+@media (max-width: 1100px) { .v-progress { display: none; } }
+
+/* ── PULL QUOTE — editorial pitch block ──────────────────────── */
+/* Oversized quotation mark at 15% opacity: visible as a decorative
+   shape, not readable text. Signals "this is a direct statement"
+   without literally labeling it. Stops the scroll visually.      */
+.pull-quote {
+  position: relative;
+  padding: var(--s5) var(--s5) var(--s5) var(--s6);
+  border-left: 2px solid var(--gold);
+  margin: 0 0 var(--s7);
+  max-width: 800px;
+  background: var(--surface-1);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  overflow: hidden;
+}
+.pull-quote-mark {
+  position: absolute;
+  left: 0.3rem;
+  top: -0.15em;
+  font-family: var(--serif);
+  font-size: 7.5rem;
+  line-height: 1;
+  color: var(--gold);
+  opacity: 0.12;
+  font-style: italic;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.pull-quote-body {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  color: var(--ink);
+  line-height: 1.72;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+}
+.pull-quote-cite {
+  display: block;
+  margin-top: var(--s3);
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ink-dim);
+  letter-spacing: 0.05em;
+  font-style: normal;
+  position: relative;
+  z-index: 1;
+}
+.pull-quote-cite a { color: var(--gold); }
+
+/* ── DATA CARD — gold left-rule on hover ─────────────────────── */
+/* The left-rule scaleY(0→1) from bottom is more intentional than
+   a background color change — signals "I chose this one" rather
+   than "I bumped into it."                                        */
+.data-card {
+  position: relative;
+}
+.data-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s var(--ease-out);
+}
+.data-card:hover::before { transform: scaleY(1); }
+
+/* ── ARCH ITEM — gold line draws across on hover ─────────────── */
+/* Width 0→100% from left: "this item is being read" signal.
+   More kinetic than a simple color change.                        */
+.arch-item {
+  overflow: hidden; /* contain the ::after line */
+}
+.arch-item::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  transition: width 0.55s var(--ease-out);
+}
+.arch-item:hover::after { width: 100%; }
+
+/* ── COMPARE CARD — inset left glow on hover ─────────────────── */
+/* box-shadow inset avoids layout shift that border-left would cause
+   inside the 1px-gap grid container.                              */
+.compare-card:hover {
+  background: var(--surface-2);
+  box-shadow: inset 2px 0 0 var(--gold-border);
+}
+
+/* ── MARQUEE — pause on hover ────────────────────────────────── */
+.marquee-band:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── WHO DOT — replaces emoji, cleaner visual language ─────────  */
+/* Small gold circle: present but not distracting. Removes the
+   "generic freelancer portfolio" signal that emoji carry.         */
+.who-dot {
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.55;
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+/* ── SECTION TIERS ───────────────────────────────────────────── */
+.section-tiers {
+  background: var(--surface-1);
+  border-top: 1px solid var(--line);
+  padding: var(--s7) 0;
+}
+
+/* 4-column preview grid — matches the 4 featured tier cards */
+.tiers-preview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-top: var(--s5);
+}
+@media (max-width: 900px)  { .tiers-preview { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .tiers-preview { grid-template-columns: 1fr; } }
+
+.tiers-cta { text-align: center; margin-top: var(--s4); }
+
+/* Enterprise "Quote" renders at a smaller size than numeric amounts */
+.enterprise-amt { font-size: 2.4rem !important; }
+
+/* ── CTA GHOST TEXT ───────────────────────────────────────────── */
+/* "Ready." at 3% opacity: visible only as a shape, not as text.
+   Creates subliminal closure before the conscious headline fires.  */
+.cta-ghost {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(6rem, 18vw, 16rem);
+  font-weight: 300;
+  color: var(--ink);
+  opacity: 0.03;
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  user-select: none;
+  z-index: 0;
+}
+
+/* ── THREE-COLUMN FOOTER ──────────────────────────────────────── */
+/* Full editorial footer replaces the single flex row.
+   Three columns: brand statement / navigate / direct contact.
+   Completeness signals professionalism at the bottom of the page. */
+.site-footer {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+.footer-body {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--s6) var(--s4) var(--s5);
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: var(--s6);
+  align-items: start;
+}
+.footer-brand .nav-logo { margin-bottom: var(--s3); display: inline-block; }
+.footer-statement {
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  line-height: 1.72;
+  max-width: 260px;
+  font-family: var(--body);
+  margin-top: var(--s2);
+}
+.footer-col-label {
+  font-family: var(--sans);
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--line);
+  display: block;
+}
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.footer-nav-list a {
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  font-family: var(--sans);
+  transition: color 0.18s;
+}
+.footer-nav-list a:hover { color: var(--gold); }
+.footer-phone {
+  display: block;
+  font-family: var(--sans);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+  transition: color 0.18s;
+}
+.footer-phone:hover { color: var(--gold); }
+.footer-email {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  font-family: var(--body);
+  margin-bottom: var(--s3);
+  transition: color 0.18s;
+  word-break: break-all;
+}
+.footer-email:hover { color: var(--gold); }
+.footer-linkedin {
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  font-family: var(--sans);
+  transition: color 0.18s;
+}
+.footer-linkedin:hover { color: var(--gold); }
+.footer-base {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: var(--s3) var(--s4);
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+.footer-base p { font-size: 0.72rem; color: var(--ink-dim); font-family: var(--sans); }
+.footer-industry { display: flex; gap: var(--s3); }
+.footer-industry a {
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  font-family: var(--sans);
+  transition: color 0.18s;
+  opacity: 0.6;
+}
+.footer-industry a:hover { color: var(--gold); opacity: 1; }
+
+@media (max-width: 900px) {
+  .footer-body { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 580px) {
+  .footer-body { grid-template-columns: 1fr; padding: var(--s5) var(--s3) var(--s4); gap: var(--s4); }
+  .footer-base { flex-direction: column; align-items: flex-start; }
 }

@@ -169,4 +169,36 @@
     });
   });
 
+  // ── NAV SCROLLED STATE ────────────────────────────────────────
+  // Activates backdrop-filter blur only after scroll starts —
+  // avoids blurring hero content before user has scrolled at all.
+  const siteNav = document.getElementById('site-nav');
+  if (siteNav) {
+    const toggleNav = () => siteNav.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', toggleNav, { passive: true });
+    toggleNav();
+  }
+
+  // ── V-PROGRESS SECTION TRACKER ────────────────────────────────
+  // Side chapter indicator updates as data-section elements enter
+  // viewport. 30% threshold = section is clearly in frame, not
+  // just touching the edge.
+  const vNum  = document.getElementById('v-progress-num');
+  const vFill = document.getElementById('v-progress-fill');
+  const dataSections = document.querySelectorAll('[data-section]');
+
+  if (vNum && vFill && dataSections.length) {
+    const total = dataSections.length;
+    const secObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = parseInt(e.target.dataset.section, 10);
+          vNum.textContent = e.target.dataset.section;
+          vFill.style.height = Math.round((idx / total) * 100) + '%';
+        }
+      });
+    }, { threshold: 0.3 });
+    dataSections.forEach(s => secObs.observe(s));
+  }
+
 })();
