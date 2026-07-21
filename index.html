@@ -33,14 +33,8 @@
   },
   "priceRange": "$75 - $250+",
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Guthrie"
-    },
-    {
-      "@type": "State",
-      "name": "Oklahoma"
-    }
+    { "@type": "City", "name": "Guthrie" },
+    { "@type": "State", "name": "Oklahoma" }
   ],
   "openingHoursSpecification": [
     {
@@ -50,16 +44,31 @@
       "closes": "17:00"
     }
   ],
-  "sameAs": [
-    "https://www.linkedin.com/in/ashstubblefield/"
-  ]
+  "sameAs": ["https://www.linkedin.com/in/ashstubblefield/"]
 }
 </script>
+<!-- 
+  Typography: Inter (body — clean, modern, highly legible)
+  + Instrument Serif (headlines — elegant, distinctive, artisan feel)
+  Psych: Custom fonts signal "I invested in this." System fonts say "I used a template."
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
+<!-- Skip link — accessibility first. Hidden until focused via keyboard. -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ═══════════════════════════════════════════════
+  NAVIGATION
+   
+  Psych: Transparent → glass morphism on scroll.
+  The transition creates a "landing" effect — the nav
+  solidifies as you move into content, signaling commitment.
+  ═══════════════════════════════════════════════ -->
 <nav id="site-nav">
 <div class="nav-inner">
 <a href="index.html" class="nav-logo" aria-label="Ashton Stubblefield — Home">
@@ -68,10 +77,10 @@
 <ul class="nav-links" role="list">
 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
 <li><a href="restaurants.html">Restaurants &amp; Food Service</a></li>
-<li><a href="services.html" >Services &amp; Pricing</a></li>
-<li><a href="portfolio.html" >Portfolio</a></li>
-<li><a href="about.html" >About</a></li>
-<li><a href="contact.html" class="nav-cta ">Get Started</a></li>
+<li><a href="services.html">Services &amp; Pricing</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html" class="nav-cta">Get Started</a></li>
 </ul>
 <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
 <span></span><span></span><span></span>
@@ -86,8 +95,23 @@
 <a href="about.html">About</a>
 <a href="contact.html" class="nav-cta">Get Started</a>
 </div>
+
 <main id="main-content">
-<!-- ── 01 · HERO ── -->
+
+<!-- ═══════════════════════════════════════════════
+  01 · HERO — The threshold moment
+   
+  Psych: The visitor steps from the chaotic internet
+  into a calm, focused space. The massive serif headline
+  anchors attention. The ledger items below provide
+  instant credibility through numbers. The ambient glow
+  creates depth without distraction.
+  
+  Design: Full viewport height forces the user to engage
+  with the message before scrolling. The "CASE-001" label
+  creates industrial precision — this is a workshop, not
+  a template factory.
+  ═══════════════════════════════════════════════ -->
 <section class="hero-ed" data-section="01" data-section-label="Intro">
 <div class="hero-case" aria-label="Location and service category">
 <span class="hero-case-id">CASE-001</span>
@@ -107,8 +131,16 @@
 </div>
 <div class="hero-cta-block">
 <a href="contact.html" class="btn btn-fire btn-lg">Book Free Consultation</a>
-<p class="hero-micro">From $350 flat · $75/mo managed · Month-to-month</p>
+<p style="margin-top: 0.75rem; font-size: 0.78rem; color: var(--ink-dim);">From $350 flat · $75/mo managed · Month-to-month</p>
 </div>
+<!-- 
+  Psych: The ledger creates instant credibility.
+  Numbers bypass skepticism — "$350" is concrete.
+  "Sub-1s" signals technical competence. "24/7" 
+  promises reliability. These four items answer the
+  four objections a first-time visitor has:
+  Cost, Quality, Speed, Availability.
+-->
 <div class="hero-ledger" role="list" aria-label="Key service metrics">
 <div class="ledger-item" role="listitem">
 <span class="ledger-n">$350</span>
@@ -131,20 +163,28 @@
 </div>
 </div>
 </section>
-<!-- ── 02 · HOW IT WORKS ── -->
+
+<!-- ═══════════════════════════════════════════════
+  02 · HOW IT WORKS — Three-step journey
+   
+  Psych: Numbered steps reduce overwhelm. "You're barely involved"
+  is the key emotional message — relief. Each step reveals more,
+  using progressive disclosure. The ghost numbers create depth
+  while the involvement badges answer "what do I have to do?"
+  ═══════════════════════════════════════════════ -->
 <section id="how-it-works" class="section-process" data-section="02" data-section-label="Process">
 <div class="container">
 <div class="sec-row">
 <span class="sec-idx">02</span>
 <span class="sec-lbl">How It Works</span>
 </div>
-<h2 >
-      Three steps.<br>
+<h2>
+Three steps.<br>
 <span class="serif-h">You're barely involved.</span>
 </h2>
 <p class="section-lead">
-      Most clients spend about an hour total before launch — one call, one round of feedback. After that, I handle everything.
-    </p>
+Most clients spend about an hour total before launch — one call, one round of feedback. After that, I handle everything.
+</p>
 <div class="process-steps">
 <div class="process-step">
 <div class="process-step-num" aria-hidden="true">01</div>
@@ -182,15 +222,23 @@
 </div>
 </div>
 </section>
-<!-- ── 03 · WHAT I HANDLE ── -->
+
+<!-- ═══════════════════════════════════════════════
+  03 · WHAT I HANDLE — Four disciplines
+   
+  Psych: Grid cards create visual comparison.
+  Each card is self-contained, reducing cognitive load.
+  The arch tags at bottom provide quick technical validation.
+  Two-column grid feels balanced and authoritative.
+  ═══════════════════════════════════════════════ -->
 <section class="section-services-intro" data-section="03" data-section-label="Services">
 <div class="container">
 <div class="sec-row">
 <span class="sec-idx">03</span>
 <span class="sec-lbl">What I Handle</span>
 </div>
-<h2 >
-      The whole digital side<br>
+<h2>
+The whole digital side<br>
 <span class="serif-h">of your business.</span>
 </h2>
 <p class="section-lead">Four disciplines. One person. No coordination overhead between vendors, no gaps where someone else's job starts.</p>
@@ -236,20 +284,28 @@
 </div>
 </div>
 </div>
-<div style="text-align: center; margin-top: var(--s5);">
+<div style="text-align: center; margin-top: var(--space-xl);">
 <a href="services.html" class="btn btn-ghost">See All Services + Full Pricing →</a>
 </div>
 </div>
 </section>
-<!-- ── 04 · WHO THIS IS FOR ── -->
+
+<!-- ═══════════════════════════════════════════════
+  04 · WHO THIS IS FOR — Client segments
+   
+  Psych: Two-column layout creates visual "choose your path"
+  moment. Bullet items with amber dots provide scanning rhythm.
+  The visitor self-selects into Service or Creative, reducing
+  cognitive load by 50% — they only read their column.
+  ═══════════════════════════════════════════════ -->
 <section class="section-who" data-section="04" data-section-label="Clients">
 <div class="container">
 <div class="sec-row">
 <span class="sec-idx">04</span>
 <span class="sec-lbl">Who I Work With</span>
 </div>
-<h2 >
-      Local businesses<br>
+<h2>
+Local businesses<br>
 <span class="serif-h">and working creatives.</span>
 </h2>
 <p class="section-lead">Businesses that run on operations and need systems wired together. Creatives who need a presence that actually represents the work.</p>
@@ -323,15 +379,23 @@
 </div>
 </div>
 </section>
-<!-- ── 05 · PRICING ── -->
+
+<!-- ═══════════════════════════════════════════════
+  05 · PRICING — The decision point
+   
+  Psych: The "featured" card uses amber border to draw
+  the eye — social proof ("Most common") reduces decision
+  anxiety. Cards are self-contained for easy comparison.
+  The involvement badges answer "what do I have to do?"
+  ═══════════════════════════════════════════════ -->
 <section class="section-tiers" data-section="05" data-section-label="Pricing">
 <div class="container">
 <div class="sec-row">
 <span class="sec-idx">05</span>
 <span class="sec-lbl">Pricing</span>
 </div>
-<h2 >
-      Four packages.<br>
+<h2>
+Four packages.<br>
 <span class="serif-h">Pick the one that fits.</span>
 </h2>
 <p class="section-lead">Every deliverable is yours to keep regardless of which package you choose — no lock-in, no exit fees, no platform holding your business hostage.</p>
@@ -415,19 +479,27 @@
 </div>
 <a href="services.html#build" class="btn btn-ghost" style="white-space: nowrap;">See Build Details →</a>
 </div>
-<div class="tiers-cta">
+<div style="text-align: center; margin-top: var(--space-lg);">
 <a href="services.html" class="btn btn-ghost">See All Packages + Add-On Modules →</a>
 </div>
 </div>
 </section>
-<!-- ── 06 · OWNERSHIP PROMISE + CREDENTIALS ── -->
+
+<!-- ═══════════════════════════════════════════════
+  06 · OWNERSHIP PROMISE + CREDENTIALS
+   
+  Psych: Large quotation marks create a "spotlight" effect.
+  The quote breaks the grid rhythm, forcing attention.
+  The credential strip provides social proof through
+  certification and experience numbers.
+  ═══════════════════════════════════════════════ -->
 <section data-section="06" data-section-label="Promise">
 <div class="container">
 <div class="pull-quote">
 <span class="pull-quote-mark" aria-hidden="true">"</span>
 <blockquote class="pull-quote-body">
-        Everything is built in your name. Your domain. Your hosting account. Your Google Business profile. Your code. If you ever stop working with me, you take everything with you — no exit fees, no platform holding your business hostage. That's not a selling point. It's how it should work.
-      </blockquote>
+Everything is built in your name. Your domain. Your hosting account. Your Google Business profile. Your code. If you ever stop working with me, you take everything with you — no exit fees, no platform holding your business hostage. That's not a selling point. It's how it should work.
+</blockquote>
 <cite class="pull-quote-cite">— Ashton Stubblefield &nbsp;·&nbsp; Guthrie, OK &nbsp;·&nbsp; <a href="contact.html">Book a free call →</a></cite>
 </div>
 <div class="cred-strip">
@@ -453,21 +525,39 @@
 </div>
 </div>
 </section>
-<!-- ── 07 · CLOSING CTA ── -->
+
+<!-- ═══════════════════════════════════════════════
+  07 · CLOSING CTA — Final conversion push
+   
+  Psych: The closing CTA uses a radial gradient to
+  create visual separation. Warm amber tones reduce
+  action anxiety. "No obligation" removes the last
+  barrier to booking.
+  ═══════════════════════════════════════════════ -->
 <section class="cta-section" data-section="07" data-section-label="Contact">
 <div class="container">
 <p class="cta-label">One call is all it takes</p>
 <h2 class="cta-h2">
-      Let's figure out<br>
+Let's figure out<br>
 <em>what you actually need.</em>
 </h2>
 <p class="cta-lead">
-      Free 30-minute call. No obligation. I'll tell you exactly what your business needs, what it would cost, and whether I'm even the right fit.
-    </p>
+Free 30-minute call. No obligation. I'll tell you exactly what your business needs, what it would cost, and whether I'm even the right fit.
+</p>
 <a href="contact.html" class="btn btn-fire btn-lg">Book Your Free Call</a>
 </div>
 </section>
+
 </main>
+
+<!-- ═══════════════════════════════════════════════
+  FOOTER — Calm closure
+   
+  Psych: The footer provides a sense of completeness.
+  Contact info is prominently placed — "I'm reachable"
+  reduces the anxiety of "what if something goes wrong?"
+  Three-column grid: brand | navigation | contact.
+  ═══════════════════════════════════════════════ -->
 <footer class="site-footer">
 <div class="footer-body">
 <div class="footer-brand">
@@ -500,5 +590,84 @@
 </div>
 </div>
 </footer>
+
+<!-- ═══════════════════════════════════════════════
+  JAVASCRIPT — Minimal, functional
+   
+  Three behaviors only:
+  1. Nav glass morphism on scroll
+  2. Mobile hamburger menu
+  3. Scroll reveal animations
+  
+  No frameworks. No build tools. ~150 lines.
+  Each behavior is self-contained and progressive.
+  ═══════════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+  
+  // ── NAV SCROLL → GLASS MORPHISM ──
+  // Psych: The nav solidifying on scroll creates a "landing" effect.
+  // It signals "you're engaged now" and keeps navigation accessible.
+  var nav = document.getElementById('site-nav');
+  if (nav) {
+    var scrollThreshold = 40;
+    function updateNav() {
+      if (window.scrollY > scrollThreshold) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  }
+  
+  // ── MOBILE HAMBURGER MENU ──
+  // Psych: The X animation is satisfying — it provides clear
+  // feedback that the menu state has changed. The staggered
+  // link animation creates a "curtain reveal" effect.
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer = document.getElementById('nav-drawer');
+  if (hamburger && drawer) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = hamburger.classList.toggle('open');
+      drawer.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    // Close on link click
+    drawer.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  
+  // ── SCROLL REVEAL ANIMATIONS ──
+  // Psych: Elements appearing as you scroll create "discovery."
+  // The brain releases dopamine when finding new information.
+  // Staggered delays feel orchestrated, like a presentation.
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    
+    reveals.forEach(function(el) { observer.observe(el); });
+  } else {
+    // Fallback: show everything immediately
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+</script>
 </body>
 </html>

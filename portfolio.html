@@ -55,13 +55,16 @@
   ]
 }
 </script>
+<!-- Typography: Inter + Instrument Serif + JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
-<style>.skip-link{position:absolute;top:-100%;left:var(--s3);background:var(--fire);color:#fff;padding:0.5rem 1rem;border-radius:var(--r-sm);font-size:0.85rem;font-weight:600;z-index:99999;transition:top 0.15s;font-family:var(--sans)}</style>
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
-<nav>
+<nav id="site-nav">
 <div class="nav-inner">
 <a href="index.html" class="nav-logo"><img src="Images/logo-1.webp" alt="Ashton Stubblefield" class="nav-logo-img" /></a>
 <ul class="nav-links" role="list">
@@ -163,7 +166,7 @@
 </a>
 <p class="footer-statement">Custom websites, IT, marketing, and software for local businesses and creative professionals. Guthrie, Oklahoma.</p>
 </div>
-<nav class="footer-nav" aria-label="Footer navigation">
+<nav  class="footer-nav" aria-label="Footer navigation">
 <span class="footer-col-label">Navigate</span>
 <div class="footer-nav-list">
 <a href="index.html#how-it-works">How It Works</a>
@@ -188,5 +191,55 @@
 </div>
 </footer>
 
+<script>
+(function() {
+  'use strict';
+  var nav = document.getElementById('site-nav');
+  if (nav) {
+    var scrollThreshold = 40;
+    function updateNav() {
+      if (window.scrollY > scrollThreshold) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  }
+  var hamburger = document.getElementById('nav-hamburger');
+  var drawer = document.getElementById('nav-drawer');
+  if (hamburger && drawer) {
+    hamburger.addEventListener('click', function() {
+      var isOpen = hamburger.classList.toggle('open');
+      drawer.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        drawer.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  var reveals = document.querySelectorAll('.reveal');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+  }
+})();
+</script>
 </body>
 </html>
