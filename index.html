@@ -33,14 +33,7 @@
 </a>
 <ul class="nav-links" role="list">
 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-<li class="nav-has-dropdown">
-<a href="#" class="nav-dropdown-toggle " aria-haspopup="true" aria-expanded="false">Who We Serve <svg width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
-<ul class="nav-dropdown" role="menu">
-<li role="menuitem"><a href="restaurants.html">Restaurants &amp; Food Service</a></li>
-<li role="menuitem"><a href="trades.html">Trades &amp; Professionals</a></li>
-<li role="menuitem"><a href="creatives.html">Artists &amp; Creatives</a></li>
-</ul>
-</li>
+<li><a href="restaurants.html">Restaurants &amp; Food Service</a></li>
 <li><a href="services.html" >Services &amp; Pricing</a></li>
 <li><a href="portfolio.html" >Portfolio</a></li>
 <li><a href="about.html" >About</a></li>
@@ -53,10 +46,7 @@
 </nav>
 <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
 <a href="index.html">Home</a>
-<span class="drawer-section-label">Who We Serve</span>
-<a href="restaurants.html" class="drawer-sub">Restaurants &amp; Food Service</a>
-<a href="trades.html" class="drawer-sub">Trades &amp; Professionals</a>
-<a href="creatives.html" class="drawer-sub">Artists &amp; Creatives</a>
+<a href="restaurants.html">Restaurants &amp; Food Service</a>
 <a href="services.html">Services &amp; Pricing</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
@@ -458,7 +448,6 @@
 <a href="services.html">Services</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
-<a href="cv.html" target="_blank" rel="noopener">Credentials</a>
 <a href="contact.html">Contact</a>
 </div>
 </nav>
@@ -473,34 +462,8 @@
 <p>© 2026 Ashton Stubblefield — Guthrie, OK</p>
 <div class="footer-industry">
 <a href="restaurants.html">For Restaurants</a>
-<a href="trades.html">For Trades</a>
-<a href="creatives.html">For Creatives</a>
 </div>
 </div>
 </footer>
-<script>(function(){'use strict';const hamburger=document.getElementById('nav-hamburger');const drawer=document.getElementById('nav-drawer');if(hamburger && drawer){hamburger.addEventListener('pointerdown',()=>{const isOpen=drawer.classList.toggle('open');hamburger.classList.toggle('open',isOpen);hamburger.setAttribute('aria-expanded',isOpen ? 'true' : 'false');document.body.style.overflow=isOpen ? 'hidden' : '';});drawer.querySelectorAll('a').forEach(a=>{a.addEventListener('pointerdown',()=>{hamburger.classList.remove('open');drawer.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';});});}const siteNav=document.getElementById('site-nav');if(siteNav){let rafPending=false;const applyScrolled=()=>{siteNav.classList.toggle('scrolled',window.scrollY > 20);rafPending=false;};window.addEventListener('scroll',()=>{if(!rafPending){rafPending=true;requestAnimationFrame(applyScrolled);}},{passive: true});applyScrolled();}})();</script>
-
-// Who We Serve dropdown
-(function(){
-  var items=document.querySelectorAll('.nav-has-dropdown');
-  items.forEach(function(item){
-    var toggle=item.querySelector('.nav-dropdown-toggle');
-    if(!toggle)return;
-    toggle.addEventListener('click',function(e){
-      e.preventDefault();
-      var isOpen=item.classList.contains('open');
-      items.forEach(function(i){i.classList.remove('open');i.querySelector('.nav-dropdown-toggle')&&i.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded','false');});
-      if(!isOpen){item.classList.add('open');toggle.setAttribute('aria-expanded','true');}
-    });
-  });
-  document.addEventListener('click',function(e){
-    items.forEach(function(item){
-      if(!item.contains(e.target)){item.classList.remove('open');var t=item.querySelector('.nav-dropdown-toggle');t&&t.setAttribute('aria-expanded','false');}
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){items.forEach(function(item){item.classList.remove('open');var t=item.querySelector('.nav-dropdown-toggle');t&&t.setAttribute('aria-expanded','false');});}
-  });
-})();
 </body>
 </html>
